@@ -3,7 +3,7 @@ h1{
 }
 
 .itemsMenuCentralUsuario{
-    list-style: none;
+    
 
     border-radius: 40px;
 
@@ -11,7 +11,15 @@ h1{
 .linksMenuCentralUsuario{
     text-decoration: none;
     color: antiquewhite;
+    list-style: none;
 }
 .linksMenuCentralUsuario:hover{
     background: blue;
+}
+.fondoMainUsuario{
+    background-image: url('https://enterados.pe/wp-content/uploads/2020/12/cine-clasico.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+    color: aqua;
 }
