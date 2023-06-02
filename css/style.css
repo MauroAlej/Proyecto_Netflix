@@ -2,6 +2,13 @@ h1{
     color: black;
 }
 
-.linkMenu{
-    color: aliceblue;
+.itemsMenuCentralUsuario{
+    list-style: none;
+  
+    
+}
+.linksMenuCentralUsuario{
+    text-decoration: none;
+    color: antiquewhite;
+
 }
