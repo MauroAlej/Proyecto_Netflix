@@ -12,14 +12,17 @@
     <header>
         <h2>Vista usuario principal </h2>
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Bienvenidos</a>
-                <a  class="navbar-brand" href="http://"><img src="" alt=""></a>
-                <li class="itemsMenuCentralUsuario"><a class="linksMenuCentralUsuario" href="http://"> Inicio</a></li>
-                <li class="itemsMenuCentralUsuario"><a class="linksMenuCentralUsuario" href="http://"> Sobre nosotros</a></li>
-                <li class="itemsMenuCentralUsuario"><a class="linksMenuCentralUsuario" href="http://"> Películas</a> </li>
-                <li class="itemsMenuCentralUsuario"><a class="linksMenuCentralUsuario" href="http://">Géneros</a></li>
+            <div class="container-fluid">             
+                <a  class="navbar-brand" href="http://"><img src="" alt="">Bienvenidos</a>
+                <div class="contenedorMenuCentral d-flex">
+                  <li class="ItemsDecoracion"><a href="" class="linksMenuCentralUsuario text-white p-2">Inicio</a></li>
+                  <li class="ItemsDecoracion"><a href="" class="linksMenuCentralUsuario text-white p-2 ">Películas y series</a></li>
+                  <li class="ItemsDecoracion"><a href="" class="linksMenuCentralUsuario text-white p-2">Estrenos</a></li>
+                  <li class="ItemsDecoracion"><a href="" class="linksMenuCentralUsuario text-white p-2">Sobre nosotros</a></li>
+
+              </div>
                 
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,29 +33,25 @@
                          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                      </div>
                     <div class="offcanvas-body">
+                      <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                      </form>
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <!-- <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="#">Subscripción</a>
-                            </li> -->
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle linksMenuCentralUsuario" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li class="nav-item dropdown pt-2">
+                              <a class="nav-link dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Subscripción
                               </a>
                               <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item linksMenuCentralUsuario" href="#">Mis planes</a></li>
-                                <li><a class="dropdown-item linksMenuCentralUsuario" href="#">Cancelar</a></li>
-                                
+                                <li><a class="dropdown-item linksMenuCentralUsuario" href="#">Cancelar</a></li>                         
                               </ul>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="#">Cerrar sesión</a>
-                            </li>
-                            
+                            </li>                            
                         </ul>
-                        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-success" type="submit">Buscar</button>
-                        </form>
+                       
                     </div>
                 </div>
             </div>
