@@ -25,6 +25,7 @@ h1{
 }
 .mainVistaUsuario{
     margin-top: 55px;
+    background: #00337C;
 }
 
 .fuente-body{
@@ -35,3 +36,13 @@ h1{
     font-family: 'Lato', sans-serif;
     font-family: 'Lobster', cursive;}
     
+    .recomendaciones{
+        height: 270px;
+        width: 10px;
+    }
+    .colorTextoUsuario{
+        color: #03C988;
+    }
+    .textoCardsUsuario{
+       color: #1C82AD;
+    }
