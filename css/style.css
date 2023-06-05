@@ -67,4 +67,7 @@ h1{
     .fondoMainUsuario{
         background: #7577CD;
     }
-   
+   .linkFooter{
+    text-decoration: none;
+    color: #080957;
+   }
