@@ -34,16 +34,12 @@ h1{
     .recomendaciones{
         height: 270px;
         width: 10px;
-        webkit-box-shadow: 3px 10px 24px 15px rgba(219,219,235,1);
-        moz-box-shadow: 3px 10px 24px 15px rgba(219,219,235,1);
-        box-shadow: 3px 10px 24px 15px rgba(219,219,235,1);
+        
     }
     .recomendacionesListas{
         height: 270px;
         width: 10px;
-       /*  webkit-box-shadow: -1px 3px 8px 3px rgba(255,109,2,1);
-        moz-box-shadow: -1px 3px 8px 3px rgba(255,109,2,1);
-        box-shadow: -1px 3px 8px 3px rgba(255,109,2,1); */
+      
        
         }
     .colorTextoUsuario{
