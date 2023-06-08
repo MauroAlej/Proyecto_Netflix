@@ -8,6 +8,109 @@
 </head>
 <body>
     <h2>Holamundo</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+         <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Bienvenidos</h5>
+             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         </div>
+        <div class="offcanvas-body">
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-success" type="submit">Buscar</button>
+          </form>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item dropdown pt-2">
+                  <a class="nav-link dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Subscripción
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item linksMenuCentralUsuario" href="#">Mis planes</a></li>
+                    <li><a class="dropdown-item linksMenuCentralUsuario" href="#">Cancelar</a></li>                         
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cerrar sesión</a>
+                </li>                            
+            </ul>
+           
+        </div>
+    </div>
+</div>
+</nav> 
+</header>
+<main >
+<h2 class="text-center ">¿Quién esta viendo?</h2>
+
+<!-- fin de nav -->
+
+<main class="color-main ">
+<div class="d-flex contenedor-login mt-5 py-5  ">
+<div class="row justify-content-center mt-3 color-login margen-login">
+<form class="row px-4 col-sm-12 col-lg-5">
+
+    <div class="col-sm-12 mb-3">
+        <label for="exampleInputEmail1" class="form-label">Ingrese un correo electrónico</label>
+        <input type="text" class="form-control" id="inputuser" aria-describedby="emailHelp" maxlength="25" required>
+    </div>
+    <div class="col-sm-12 mb-3">
+        <label for="exampleInputPassword1" class="form-label">Ingresar una contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" maxlength="16" minlength="8" required>
+
+    </div>
+
+    <div class="col-sm-12">
+        <button type="submit" class="col-sm-12 btn color-botoneslogin color-textobotones mb-2">Ingresar</button>
+        <a href="administrador.html"><i class="fa-solid fa-user-tie fa-beat" style="color:#05004E ;"></i></a>
+        <a href="vistaUsuario.html"><i class="fa-solid fa-users-line fa-beat" style="color:#05004E ;"></i></a>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-link color-textoModal " data-bs-toggle="modal" data-bs-target="#modalRestablecer">
+        Olvide mi contraseña
+        </button>
+        <button type="button" id="buttonRegister" class="col-sm-12 btn color-botoneslogin color-textobotones mb-2">Registrarse</button>
+
+        <a href="Error404.html" class="col-sm-12 btn btn-warningcolor-botones color-textobotoneslogin mb-3">Iniciar sesión con Google</a>
+
+        <a href="Error404.html" class="col-sm-12 btn btn-warningcolor-botones color-textobotoneslogin mb-3">Iniciar sesión con Facebook</a>
+
+    </div>
+
+
+</form>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-5 order-lg-first">
+      </div>
+      <div class="col-lg-7">
+        <!-- Modal -->
+        <div class="modal fade" id="modalRestablecer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Olvidó su contraseña?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleEmailRestablecer" class="form-label text-center">Ingrese un correo electrónico</label>
+                    <label class="form-label text-center">Te vamos a enviar un código para que cambies tu contraseña.</label>
+                    <input type="email" class="form-control" id="eEmailRestablecer" aria-describedby="emailHelp" maxlength="25" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     
 </body>
 </html>
