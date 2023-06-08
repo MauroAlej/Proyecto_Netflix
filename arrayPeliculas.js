@@ -33,7 +33,7 @@ const obtenerPersonaje = () => {
 // CREACIÓN DEL ARRAY: 
 const arrayPelicula = [
     { id:'1',
-      titulo: 'Los renglones torcidos de dios',
+      titulo: 'Los renglones torcidos de Dios',
       genero: 'Drama',
       descripcion: 'Película española',
       img:'https://pics.filmaffinity.com/Los_renglones_torcidos_de_Dios-904127289-large.jpg'
