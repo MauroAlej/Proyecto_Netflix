@@ -1,89 +1,90 @@
-/* let objeto = {
-  nombre: 'Carlos',
-  apellido: 'Diaz'
-}
+/*  const arrayPersonajes = []
 
-let array = [
-  {
-    nombre: 'Carlos',
-    apellido: 'Diaz'
+ const divPadre = document.getElementById('cardPelicula')
+
+ const personajes = fetch('https://rickandmortyapi.com/api/character')
+ .then(repuestaApi => repuestaApi.json())
+ .then(data => data.results.forEach(personaje => {
+  arrayPersonajes.push(personaje)
+}))
+.catch(console.warn)
+
+const obtenerPersonaje = () => {
+  console.log(arrayPersonajes)
+  divPadre.innerHTML = arrayPersonajes.map((personaje) => `
+  <div class=" container-fluid">
+      <div class="row ">
+          <div class="card col-md-2 col-lg-9 pt-3 " style="width: 13rem" ;>
+          <img src="${personaje.image}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Titulo/h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Más información</a>
+          </div>
+        </div> 
+          </div>
+      </div>
+  
+  </div>
+  
+  `)
+}  */
+
+// CREACIÓN DEL ARRAY: 
+const arrayPelicula = [
+  { id:1,
+    titulo: 'El elefante es un mágico elefante',
+    genero: 'Comedia',
+    descripcion: 'Película infantil',
+    img:'https://www.pluggedin.com/wp-content/uploads/2023/03/the-magicians-elephant.jpg'
+},
+{
+    id:2,
+    titulo: 'Avatar 3',
+    genero: 'Ciencia ficción',
+    descripcion: 'Película estadounidence',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SXHPceBJ-r2h7uBkTdsSWYPELapczW0Knw&usqp=CAU'
   },
   {
-    nombre: 'Juan',
-    apellido: 'Perez'
-  }    
+    id:3,
+    titulo: 'Siete reyes deben morir',
+    genero: 'Drama, ciencia ficción',
+    descripcion: 'Película española',
+    img:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/4NCWCXDSNZHJVF3F4KWBMTIA2M.jpg'
+  }
+      
 ]
 
-localStorage.setItem('nombre', 'pepito')
-localStorage.setItem('apellido', 'cualquiera')
+const divPadre = document.getElementById('cardPelicula')
 
-localStorage.setItem('nombre', 'maxi')
-localStorage.setItem('apellido', 'busi')
+console.log(arrayPelicula)
+divPadre.innerHTML = arrayPelicula.map((pelicula) => `
+<div class="container-fluid ">
+   <div class="row pt-2 justify-content-center">
+       <div  class=" card col-sm-12 col-md-4 col-lg-4 pt-3 " style="width: 18rem" ;>
+       <img src="${pelicula.img}" class="card-img-top " alt="...">
+       <div class="card-body text-center">
+         <h5 class="card-title">${pelicula.titulo}</h5>
+         <p class="card-text ">${pelicula.genero}</p>
+         <p class="card-text ">${pelicula.descripcion}</p>
+         <button class="btn btn-success" onclick="agregarLista(${pelicula.id})" type="button">Buscar</button>
 
-localStorage.setItem('db', JSON.stringify(array)) */
+       </div>
+     </div> 
+       </div>
+   </div>
 
-/* console.log(objeto)
-console.log(JSON.stringify(objeto))
-console.log(JSON.parse(JSON.stringify(objeto)))
-localStorage.setItem('objeto', objeto)
-console.log(localStorage.getItem('objeto'))
+</div>
 
-localStorage.setItem('objeto', JSON.stringify(objeto))
-console.log(JSON.parse(localStorage.getItem('objeto')))
+`).join('');
 
-
-localStorage.setItem('array', JSON.stringify(array))
-console.log(JSON.parse(localStorage.getItem('array'))) */
-
-/* GET o GET ID - POST - PUT o PATCH - DELETE - API */
-
-/* Obtener elementos HTML */
-let nombrePelicula = document.getElementById('nombrePelicula')
-let genero = document.getElementById('genero')
-let desc = document.getElementById('desc')
-/* Lo que me falto en la clase fue agregar un div en html y obtenerlo por JS */
-let divPadre = document.getElementById('divPadre')
-
-let arrayPeliculasNuevas = []
-
-let nombrePel = ''
-let generoDePelicula = ''
-let descripcionDePelicula = ''
-
-const createProd = (evento) => {
-  const { name, value } = evento.target
-
-  if (name === 'nombrePelicula') {
-    nombrePel = value
-  } else if (name === 'genero') {
-    generoDePelicula = value
-  } else if (name === 'desc') {
-    descripcionDePelicula = value
-  }
-}
-
-nombrePelicula.addEventListener('input', createProd)
-genero.addEventListener('input', createProd)
-desc.addEventListener('input', createProd)
-
-const funcionPush = () => {
-  if (nombrePel && generoDePelicula && descripcionDePelicula) {
-    arrayPeliculasNuevas.push({
-      nombrePelicula: nombrePel,
-      genero: generoDePelicula,
-      desc: descripcionDePelicula
-    })
+const agregarLista = (id) => {
+  const peliculaFilter = arrayPelicula.filter((pelicula) => 
+    pelicula.id === id)
   }
 
-  if (arrayPeliculasNuevas.length > 0) {
-    localStorage.setItem('arrayPeliculasNuevas', JSON.stringify(arrayPeliculasNuevas))
-    reloadProd()
-  }
-}
 
- 
- 
- 
+
 
 
 
