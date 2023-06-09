@@ -12,22 +12,30 @@
 
 <body>
   <main>
-    <form class="w-50">
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Título de la película</label>
-        <input name="nombrePelicula" id="nombrePelicula" type="text" class="form-control" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Género</label>
-        <input name="genero" id="genero" type="text" class="form-control">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Descripción</label>
-        <input name="desc" id="desc" type="text" class="form-control">
-      </div>
-      <button onclick='funcionPush()' type="button" class="btn btn-primary">Agregar película</button>
-    </form>
+    <div class="container-fluid ">
+      <div class="row justify-content-center ">
+        <div class="col-sm-12 col-md-6 col-lg-8 ">
+          <form >
+            <div class="mb-3 pt-3">
+              <label for="exampleInputEmail1" class="form-label">Título de la película</label>
+              <input name="nombrePelicula" id="nombrePelicula" type="text" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Género</label>
+              <input name="genero" id="genero" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Descripción</label>
+              <input name="desc" id="desc" type="text" class="form-control">
+            </div>
+            <button onclick='funcionPush()' type="button" class="btn btn-primary">Agregar película</button>
+          </form>
+      
 
+        </div>
+      </div>
+    </div>
+  
     <div id="divPadre" class="d-flex">
 
     </div>

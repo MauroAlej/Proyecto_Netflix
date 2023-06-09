@@ -44,7 +44,7 @@ let desc = document.getElementById('desc')
 /* Lo que me falto en la clase fue agregar un div en html y obtenerlo por JS */
 let divPadre = document.getElementById('divPadre')
 
-let arrayProd = []
+let arrayPeliculasNuevas = []
 
 let nombrePel = ''
 let generoDePelicula = ''
@@ -68,36 +68,28 @@ desc.addEventListener('input', createProd)
 
 const funcionPush = () => {
   if (nombrePel && generoDePelicula && descripcionDePelicula) {
-    arrayProd.push({
+    arrayPeliculasNuevas.push({
       nombrePelicula: nombrePel,
       genero: generoDePelicula,
       desc: descripcionDePelicula
     })
   }
 
-  if (arrayProd.length > 0) {
-    localStorage.setItem('arrayProd', JSON.stringify(arrayProd))
+  if (arrayPeliculasNuevas.length > 0) {
+    localStorage.setItem('arrayPeliculasNuevas', JSON.stringify(arrayPeliculasNuevas))
     reloadProd()
   }
 }
 
-const reloadProd = () => {
-  let arrayProdLS = JSON.parse(localStorage.getItem('arrayProd'))
-  /* Al div que obtuvimos por JS utilizamos la propiedad JS innerHTML y mapeamos el array y por cada elemento que tenga el array devuelve al html un elemento como por ejemplo la card. Si tenemos 4 elementos en el array devuelve 4 card */
-  divPadre.innerHTML = arrayProdLS.map((prod) =>
-    `
-  <div class="card mt-5" style="width: 18rem;">
-  <img src="${prod.img}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${prod.nombrePelicula}</h5>
-    <p class="card-text">${prod.genero}</p>
-    <p class="card-text">${prod.desc}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-`
-  )
-}
+ 
+ 
+ 
+
+
+
+
+
+
 
 
 
