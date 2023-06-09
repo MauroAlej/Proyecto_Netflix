@@ -33,7 +33,7 @@ const obtenerPersonaje = () => {
 // CREACIÓN DEL ARRAY: 
 const arrayPelicula = [
     { id:'1',
-      titulo: 'El elefante es mágico!!',
+      titulo: 'El elefante es un mágico elefante',
       genero: 'Comedia',
       descripcion: 'Película infantil',
       img:'https://www.pluggedin.com/wp-content/uploads/2023/03/the-magicians-elephant.jpg'
