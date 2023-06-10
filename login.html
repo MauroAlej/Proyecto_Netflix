@@ -60,7 +60,7 @@
         </nav> 
     </header>
     <main >
-      <h2 class="text-center ">¿Quién esta viendo?</h2>
+    
 
       <!-- fin de nav -->
 
@@ -70,20 +70,31 @@
 <form class="row px-4 col-sm-12 col-lg-5">
 
     <div class="col-sm-12 mb-3">
-        <label for="exampleInputEmail1" class="form-label">Ingrese un correo electrónico</label>
-        <input type="text" class="form-control" id="inputuser" aria-describedby="emailHelp" maxlength="25" required>
+        <label for="exampleInputEmail1" class="form-label">Usuario</label>
+        <input type="text"  name=Username class="form-control" 
+        id="inputuser" aria-describedby="emailHelp" maxlength="25" required>
+    </div>
+    <div id="msgErrUser" class="form-text"><small>campo usuario vacio</small></div>
+    <div class="col-sm-12 mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="text" name=''class="form-control" 
+        id="exampleInputPassword1" maxlength="16" minlength="8" required>
+        <div id="msgErrUser" class="form-text"><small>campo contraseña vacio</small></div>
     </div>
     <div class="col-sm-12 mb-3">
-        <label for="exampleInputPassword1" class="form-label">Ingresar una contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" maxlength="16" minlength="8" required>
+      <label for="exampleInputPassword1" class="form-label">Repetir contraseña</label>
+      <input type="text" name= 'repeatPass'class="form-control" name="repeatPass"
+      id="repeatPass" maxlength="16" minlength="8" required>
+      <div id="divErrRepeatPass" class="form-text"><small>Campo repetir contraseña</small></div>
 
-    </div>
+  </div>
+  <div class="col-sm-12 mb-3">
+    <input type="checkbox" id="checkId" name="check"
+    nameclass="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="text" maxlength="16" minlength="8" required>
 
-    <div class="col-sm-12">
-        <button type="submit" class="col-sm-12 btn btn-danger mb-2">Ingresar</button>
-        <a href="administrador.html"><i class="fa-solid fa-user-tie fa-beat" style="color:#05004E ;"></i></a>
-        <a href="vistaUsuario.html"><i class="fa-solid fa-users-line fa-beat" style="color:#05004E ;"></i></a>
-
+</div>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-link color-textoModal " data-bs-toggle="modal" data-bs-target="#modalRestablecer">
         Olvide mi contraseña
@@ -97,7 +108,7 @@
     </div>
 
 
-</form>
+</form> 
 <div class="container">
     <div class="row">
       <div class="col-lg-5 order-lg-first">
@@ -130,5 +141,8 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     
+
+  <script src="../js/login.js">
+  </script>
 </body>
 </html>
