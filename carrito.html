@@ -3,87 +3,89 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Carrito de peliculaaaaaaaa</title>
+    <title>Carrito</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+  />
+  <link rel="stylesheet" href="./css/carrito.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
    
 <!-- /////////////F.CARRITO///////////// -->
-
-<div class="container">
-    <h1>Carrito Moderno</h1>
-    <hr>
-    <!-- CARRITO VACIO -->
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Productos</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Acción</th>
-          <th scope="col">Total</th>
-        </tr>
-      </thead>
-      <tbody id="items"></tbody>
-      <tfoot>
-        <tr id="footer">
-          <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-        </tr>
-      </tfoot>
-    </table>
-    <!-- CARRITO VACIO -->
-
-    <div class="row" id="cards"> </div>
-</div>
+<header>
 
 
-<!-- TEMPLATE FOOTER -->
-<template id="template-footer">
-  <th scope="row" colspan="2">Total productos</th>
-  <td>10</td>
-  <td>
-      <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-          vaciar todo
-      </button>
-  </td>
-  <td class="font-weight-bold">$ <span>5000</span></td>
-</template>
-<!-- TEMPLATE FOOTER -->
+  <nav class="navbar navbar-light bg-dark min-vw-100">
+    <h2 class="p-3 text-white">Carrito de Compras</h2>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#modal">
+          <i class="bi bi-cart mx-5" id="carritoContenedor">0</i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+<!-- ///header replicas -->
+       
+  
 
-<!-- TEMPLATE CARRITO -->
-<template id="template-carrito">
-<tr>
-  <th scope="row">id</th>
-  <td>Café</td>
-  <td>1</td>
-  <td>
-      <button class="btn btn-info btn-sm">
-          +
-      </button>
-      <button class="btn btn-danger btn-sm">
-          -
-      </button>
-  </td>
-  <td>$ <span>500</span></td>
-</tr>
-</template>
-<!-- TEMPLATE CARRITO -->
 
-<template id="template-card">
-    
-    <div class="col-12 mb-2 col-md-4">
-      <div class="card">
-        <img src="" alt="" class="card-img-top">
-        <div class="card-body">
-          <h5>Titulo</h5>
-          <p>precio</p>
-          <button class="btn btn-dark">Comprar</button>
+
+<!-- ///header replicas -->
+
+</header>
+<main>
+  <div class="row mt-5" id="contenedor"></div>
+</main>
+
+
+<div class="container-xl">
+  <div class="modal" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Carrito</h5>
+          <button
+            type="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="vaciarCarrito">
+            Vaciar carrito
+          </button>
+          <button type="button" id="procesarCompra" class="btn btn-primary">
+            Continuar compra
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cerrar
+          </button>
+
+          <span>Precio total:</span>
+          <p class="text-center" id="precioTotal"></p>
         </div>
       </div>
     </div>
-
-</template>
-
+  </div>
+</div>
 
 
 
