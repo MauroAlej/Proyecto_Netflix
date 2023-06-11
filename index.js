@@ -1,101 +1,72 @@
-let inputUser = document.getElementById('inputUser')
-let inputPass= document.getElementById('pass')
-let inputRepeatPass= document.getElementById('RepeatPass')
-let inputCheck = docuemnt.getElementById('checkId')
+let inputUser = document.getElementById('inputUser');
+  let inputPass = document.getElementById('inputPassword');
+  let inputRepeatPass = document.getElementById('inputRepeatPassword');
+  let inputCheck = document.getElementById('checkId');
 
-let divErrorUser = document.getElementById('msgErrUser')
-let divErrPass = document.getElementbyId('divErrPass')
-let divErrRepeatPass = document.getElementById('divErrRepeatPass')
-let buttonRegister =document.getElementById('buttonRegister')
+  let divErrorUser = document.getElementById('msgErrUser');
+  let divErrorPass = document.getElementById('msgErrPass');
+  let divErrorRepeatPass = document.getElementById('msgErrRepeatPass');
+  let buttonRegister = document.getElementById('buttonRegister');
 
-let localStorageArray = JSON.parse(localStorage.getItem
-    ('users')) || []
-let arrayUsuarios = []
+  divErrorUser.classList.add('d-none');
+  divErrorPass.classList.add('d-none');
+  divErrorRepeatPass.classList.add('d-none');
 
- if (localStorageArray.lenght > 0) {
-    localStorageArray.forEach(user => arrayUsuarios.push
-        (user))}
+  const inputChange = (event) => {
+    const { name, value } = event.target;
 
-
-divErrorUser.classList ='d-none'
-divErrorPass.classList ='d-none'
-divErrorRepeatPass.classList ='d-none'
-console.log(localStorageArray.length)
-
-let idUser = localStorage.length === 0 ? 1 : 
-localStorageArray[localStorageArray -1].id + 1
-console.log(idUser)
-
-
-
-let objetoform ={
-    id: idUser,
-    Username:'',
-    pass:'',
-    repeatPAss: '',
-    check: false,
-    role: 'admin',
-    login: false
-}
-
-const inputChange = (event) => {
-    const{name, value} = event.target
-   
-    if( name === 'check'){
-        objetoForm[name] = inputCheck.checked
-    }else {
-        objetoForm[name]= value
+    if (name === 'check') {
+      objetoForm[name] = inputCheck.checked;
+    } else {
+      objetoForm[name] = value;
     }
-    switch(name){
-        case 'username':
-            divErrorUser.classList.add('d-none')
-            inputUser.classList.remove('is invalid')
-            break;
-            case 'pass':
-                divErrPass.classList.add('d-none')
-                inputPass.classList.remove('is invalid')
-                break;
-                case 'repeatPass':
-                    divRepeatPass.classList.add('d-none')
-                    inputRepeatPass.classList.remove('is invalid')
-                    break;
+
+    switch (name) {
+      case 'username':
+        divErrorUser.classList.add('d-none');
+        inputUser.classList.remove('is-invalid');
+        break;
+      case 'pass':
+        divErrorPass.classList.add('d-none');
+        inputPass.classList.remove('is-invalid');
+        break;
+      case 'repeatPass':
+        divErrorRepeatPass.classList.add('d-none');
+        inputRepeatPass.classList.remove('is-invalid');
+        break;
     }
-    
-}
+  };
 
-objetoform.Username
+  const register = () => {
+    const { username, pass, repeatPass } = objetoForm;
 
-const register =() => {
-    const {username, pass, repeatPass} = objectform
-    if(username && pass && repeatPass){
-        if (pass === repeatPass) {
-        arrayUsuarios.push(objetoForm)
-        localStorage.setItem('users',JSON.stringlifly
-        (arrayUsuarios))
+    if (username && pass && repeatPass) {
+      if (pass === repeatPass) {
+        arrayUsuarios.push(objetoForm);
+        localStorage.setItem('users', JSON.stringify(arrayUsuarios));
         setTimeout(() => {
-            location.href='html/slogin.html'
-        },1000)
-    }else{
-        alert('Las contraseñas no coinciden')
+          location.href = 'html/slogin.html';
+        }, 1000);
+      } else {
+        alert('Las contraseñas no coinciden');
+      }
+    } else if (!username && !pass && !repeatPass) {
+      alert('Formulario vacío');
+    } else if (!username) {
+      divErrorUser.classList.remove('d-none');
+      inputUser.classList.add('is-invalid');
+    } else if (!pass) {
+      divErrorPass.classList.remove('d-none');
+      inputPass.classList.add('is-invalid');
+    } else if (!repeatPass) {
+      divErrorRepeatPass.classList.remove('d-none');
+      inputRepeatPass.classList.add('is-invalid');
     }
-    }else if(username &&!pass && !repeatpass){
-    alert('Formulario vacio')  
-    }else if (!username){
-        divErrorUser.classList = 'd-block text danger'
-        inputUser.classList.add('is-invalid')
-        
-    }else if(!pass){
-        divErrorPass.classList = 'd-block text danger'
-        inputPass.classList.add('is-invalid')
-    }else if(!Repeatpass){
-        divErrorRepeatPass.classList = 'd-block text danger'
-        inputRepeatPass.classList.add('is-invalid')
-    
-}
-}
-inputUser.addEvenetListener('input', inputChange)
-inputPass.addEvenetListener('input', inputChange)
-inputRepeatPass.addEventListener('input', inputChange)
-inputCheck.addEvenetListener('click', inputChange)
+  };
 
-buttonRegister.addEventListener('Click',register)
+  inputUser.addEventListener('input', inputChange);
+  inputPass.addEventListener('input', inputChange);
+  inputRepeatPass.addEventListener('input', inputChange);
+  inputCheck.addEventListener('click', inputChange);
+
+  buttonRegister.addEventListener('click', register);
