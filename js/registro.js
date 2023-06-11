@@ -47,7 +47,13 @@ const inputChange= (event) => {
 
 const register = ()=> {
     const { username, usermail, pass, repeatPass }= objetoForm
-    if(!username && !pass && !usermail && !repeatPass){
+    if(username && pass & usermail && repeatPass){
+
+        localStorage.setItem('users', JSON.stringify(objetoForm))
+
+
+
+    }else if(!username && !pass && !usermail && !repeatPass){
         alert('Formulario vacio')
     } else if (!username){
         divErrorName.classList= 'd-block text-danger'
