@@ -1,15 +1,28 @@
 h1{
     color: black;
 }
+<<<<<<< HEAD
+.detFooter{
+    height: 350px;
+    padding-top: 12px;
+    background-color: black;
+}
+=======
 
 .linksMenuCentralUsuario{
-    text-decoration: none;
+    /* text-decoration: none; */
     color: antiquewhite;
-    list-style: none;
-    border-radius: 11px;
+    
+   
 }
 .linksMenuCentralUsuario:hover{
     background: #FF6D02;
+}
+.itemsMenu{
+    text-decoration: none;
+    border-radius: 8px;
+    list-style: none;
+
 }
 .fondoMainUsuario{
     background-image: url('https://enterados.pe/wp-content/uploads/2020/12/cine-clasico.jpg');
@@ -38,7 +51,6 @@ h1{
     }
     .recomendacionesListas{
         height: 270px;
-        width: 10px;
       
        
         }
@@ -67,3 +79,4 @@ h1{
     text-decoration: none;
     color: #080957;
    }
+>>>>>>> c49acfc833bbc4e227d5cda4eec30fafd06ed54e
