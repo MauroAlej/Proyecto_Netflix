@@ -11,19 +11,33 @@ let divErrorMail = document.getElementById('msgErrorMail')
 let divErrorPass = document.getElementById('msgErrorPass')
 let divErrorRepeat = document.getElementById('msgErrorRepeat')
 
+let localStorageArray = JSON.parse(localStorage.getItem('users')) || []
 
+let arrayUsuarios = []
+
+localStorageArray.forEach(usuario =>{
+    console.log(usuario)
+    arrayUsuarios.push(usuario)
+} );
 
 divErrorName.classList= 'd-none'
 divErrorMail.classList= 'd-none'
 divErrorPass.classList= 'd-none'
 divErrorRepeat.classList= 'd-none'
 
+let idUser = localStorageArray.length === 0 ? 1 : localStorageArray[localStorageArray.length - 1].id + 1
+
 let objetoForm= {
+    id: idUser,
     username: '',
     usermail: '',
     pass: '',
-    repeatPass: ''
+    repeatPass: '',
+    role:'user',
+    login:false
 }
+
+let arrayObjeto = []
 
 const inputChange= (event) => {
     const {name,value}= event.target
@@ -47,9 +61,9 @@ const inputChange= (event) => {
 
 const register = ()=> {
     const { username, usermail, pass, repeatPass }= objetoForm
-    if(username && pass & usermail && repeatPass){
-
-        localStorage.setItem('users', JSON.stringify(objetoForm))
+    if(username && pass && usermail && repeatPass){
+        arrayObjeto.push(objetoForm)
+        localStorage.setItem('users', JSON.stringify(arrayObjeto))
 
 
 
