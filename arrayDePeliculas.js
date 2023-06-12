@@ -74,7 +74,7 @@ const divPadre = document.getElementById('cardPelicula')
          </div>
      </div>
  
- </div>
+ </div> 
  
  `).join('');
 
