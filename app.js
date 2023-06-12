@@ -147,4 +147,46 @@ stockProductos.forEach((prod) => {
   }
 });
 
+const agregarProducto = (id) => {
+    const existe = carrito.some(prod => prod.id === id)
+  
+    if(existe){
+      const prod = carrito.map(prod => {
+        if(prod.id === id){
+          prod.cantidad++
+        }
+      })
+    } else {
+      const item = stockProductos.find((prod) => prod.id === id)
+      carrito.push(item)
+    }
+    mostrarCarrito()
+  
+  };
+  
+  const mostrarCarrito = () => {
+    const modalBody = document.querySelector(".modal .modal-body");
+    if (modalBody) {
+      modalBody.innerHTML = "";
+      carrito.forEach((prod) => {
+        const { id, nombre, precio, desc, img, cantidad } = prod;
+        console.log(modalBody);
+        modalBody.innerHTML += `
+        <div class="modal-contenedor">
+          <div>
+          <img class="img-fluid img-carrito" src="${img}"/>
+          </div>
+          <div>
+          <p>Producto: ${nombre}</p>
+        <p>Precio: ${precio}</p>
+        <p>Cantidad :${cantidad}</p>
+        <button class="btn btn-danger"  onclick="eliminarProducto(${id})">Eliminar producto</button>
+          </div>
+        </div>
+        
+    
+        `;
+      });
+    }
+
 //////////CARRITO//////////
