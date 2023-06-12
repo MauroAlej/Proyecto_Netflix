@@ -12,20 +12,23 @@ let divErrorPass = document.getElementById('msgErrorPass')
 let divErrorRepeat = document.getElementById('msgErrorRepeat')
 
 let localStorageArray = JSON.parse(localStorage.getItem('users')) || []
-
 let arrayUsuarios = []
 
-localStorageArray.forEach(usuario =>{
-    console.log(usuario)
-    arrayUsuarios.push(usuario)
-} );
+if (localStorageArray.length > 0 ){ 
+    localStorageArray.forEach(user => arrayUsuarios.push(user)) 
+}
 
 divErrorName.classList= 'd-none'
 divErrorMail.classList= 'd-none'
 divErrorPass.classList= 'd-none'
 divErrorRepeat.classList= 'd-none'
 
-let idUser = localStorageArray.length === 0 ? 1 : localStorageArray[localStorageArray.length - 1].id + 1
+let username = ''
+let pass = ''
+let repeatPass = ''
+let usermail = ''
+
+let idUser = localStorageArray.length > 0 ? localStorageArray[localStorageArray.length - 1].id + 1 : 1
 
 let objetoForm= {
     id: idUser,
@@ -37,7 +40,6 @@ let objetoForm= {
     login:false
 }
 
-let arrayObjeto = []
 
 const inputChange= (event) => {
     const {name,value}= event.target
@@ -62,21 +64,41 @@ const inputChange= (event) => {
 const register = ()=> {
     const { username, usermail, pass, repeatPass }= objetoForm
     if(username && pass && usermail && repeatPass){
-        arrayObjeto.push(objetoForm)
-        localStorage.setItem('users', JSON.stringify(arrayObjeto))
-
-
-
+        if( pass === repeatPass){
+        arrayUsuarios.push(objetoForm)
+        localStorage.setItem('users', JSON.stringify(arrayUsuarios))
+        setTimeout(()=> {
+            // location.href = 'login.html'
+        }, 2000)
+        }else{
+           alert('Las contraseñas no coinciden')
+        }
+        
     }else if(!username && !pass && !usermail && !repeatPass){
-        alert('Formulario vacio')
-    } else if (!username){
-        divErrorName.classList= 'd-block text-danger'
-    } else if(!usermail){
-        divErrorMail.classList= 'd-block text-danger'
-    } else if(!pass){
-        divErrorPass.classList= 'd-block text-danger'
-    } else if(!repeatPass){
-        divErrorRepeat.classList= 'd-block text-danger'
+        switch(true){
+            case !username:
+                divErrorName.classList= 'd-block text-danger'
+            case !usermail:
+                divErrorMail.classList= 'd-block text-danger'
+            case !pass:
+                divErrorPass.classList= 'd-block text-danger'
+            case !repeatPass:
+                divErrorRepeat.classList= 'd-block text-danger'
+        }
+        
+    } else {
+        if (!username){
+            divErrorName.classList= 'd-block text-danger'
+        }
+         if(!usermail){
+            divErrorMail.classList= 'd-block text-danger'
+        } 
+         if(!pass){
+            divErrorPass.classList= 'd-block text-danger'
+        }
+         if(!repeatPass){
+            divErrorRepeat.classList= 'd-block text-danger'
+        }
     }
 }
 
