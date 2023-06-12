@@ -1,114 +1,68 @@
 //////////CARRITO//////////
+let carrito = [];
 
-const cards = document.getElementById('cards')
-const items = document.getElementById('items')
-const footer = document.getElementById('footer')
-const templateCard = document.getElementById('template-card').content
-const templateFooter = document.getElementById('template-footer').content
-const templateCarrito = document.getElementById('template-carrito').content
-const fragment = document.createDocumentFragment()
-let carrito = {}
+const contenedor = document.querySelector("#contenedor");
+const carritoContenedor = document.querySelector("#carritoContenedor");
+const vaciarCarrito = document.querySelector("#vaciarCarrito");
+const precioTotal = document.querySelector("#precioTotal");
+const activarFuncion = document.querySelector("#activarFuncion");
+const procesarCompra = document.querySelector("#procesarCompra");
+const totalProceso = document.querySelector("#totalProceso");
+const formulario = document.querySelector('#procesar-pago')
 
-
-
-
-
-document.addEventListener('DOMContentLoaded', () =>{
-
-    fetchData()
-
-})
-
-cards.addEventListener('click', e=> {
-    addCarrito(e)
-    //el e nos sirve para camputar el elemento que queremos modificar
-})
-
-const fetchData = async () => {
-    try {
-
-        const res = await fetch('api.json');
-        const data = await res.json();
-       /*  console.log(data); */
-       pintarCards(data)
-
-    } catch (error) {
-        console.log(error)
-    }
-} 
-
-const pintarCards = data => {
-        data.forEach(producto => {
-
-        templateCard.querySelector('h5').textContent = producto.title
-        templateCard.querySelector('p').textContent = producto.precio
-        templateCard.querySelector('img').setAttribute("src", producto.thumbnailUrl)
-        templateCard.querySelector('.btn-dark').dataset.id = producto.id
-        const clone = templateCard.cloneNode(true)
-        fragment.appendChild(clone)
-    })
-
-    cards.appendChild(fragment)
+if (activarFuncion) {
+  activarFuncion.addEventListener("click", procesarPedido);
 }
 
-const addCarrito = e => {
-    //console.log(e.target)
-    //console.log(e.target.classList.contains('btn-dark'))
-    if (e.target.classList.contains('btn-dark')) {
-        
-        setCarrito(e.target.parentElement)
-    }
-    e.stopPropagation()
+document.addEventListener("DOMContentLoaded", () => {
+  carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  mostrarCarrito();
+  document.querySelector("#activarFuncion").click(procesarPedido);
+});
+if(formulario){
+  formulario.addEventListener('submit', enviarCompra)
 }
 
-const setCarrito = objeto => {
-    //console.log(objeto)
-    const producto = {
-        id: objeto.querySelector('.btn-dark').dataset.id,
-        title: objeto.querySelector('h5').textContent,
-        precio: objeto.querySelector('p').textContent,
-        cantidad:1
-    }
 
-    if (carrito.hasOwnProperty(producto.id)) {
-        producto.cantidad= carrito[producto.id].cantidad + 1
-    }
-    carrito[producto.id] = {...producto}
-    pintarCarrito()
-
+if (vaciarCarrito) {
+  vaciarCarrito.addEventListener("click", () => {
+    carrito.length = [];
+    mostrarCarrito();
+  });
 }
 
-/* pintamos carrito */
-const pintarCarrito = () => {
-    console.log(carrito)
-    items.innerHTML = ''
-    Object.values(carrito).forEach(producto => {
-        templateCarrito.querySelector('th').textContent = producto.id
-        templateCarrito.querySelectorAll('td')[0].textContent = producto.title
-        templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
-        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
-        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
-        templateCarrito.querySelector('span').textContent = producto.id * producto.precio
-
-        const clone = templateCarrito.cloneNode(true)
-        fragment.appendChild(clone)
-
-    })
-    items.appendChild(fragment)
-
-    // aqui pintamos el footer
-
-    pintarFooter()
-}
-const pintarFooter = () => {
-    footer.innerHTML = ''
-    if (Object.keys(carrito).length === 0) {
-        footer.innerHTML `
-        <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-        `
+if (procesarCompra) {
+  procesarCompra.addEventListener("click", () => {
+    if (carrito.length === 0) {
+      Swal.fire({
+        title: "¡Tu carrito está vacio!",
+        text: "Compra algo para continuar con la compra",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
+    } else {
+      location.href = "compra.html";
     }
-
-    const nCantidad = Object.values(carrito).reduce((acc,{cantidad}) => acc + cantidad,0)
+  });
 }
+
+stockProductos.forEach((prod) => {
+  const { id, nombre, precio, desc, img, cantidad } = prod;
+  if (contenedor) {
+    contenedor.innerHTML += `
+    <div class="card mt-3" style="width: 18rem;">
+    <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">${nombre}</h5>
+      <p class="card-text">Precio: ${precio}</p>
+      <p class="card-text">Descripcion: ${desc}</p>
+      <p class="card-text">Cantidad: ${cantidad}</p>
+      <button class="btn btn-primary" onclick="agregarProducto(${id})">Comprar Producto</button>
+    </div>
+  </div>
+    `;
+  }
+});
 
 //////////CARRITO//////////

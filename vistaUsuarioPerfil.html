@@ -18,10 +18,10 @@
             <div class="container-fluid">             
                 <a  class="navbar-brand" href="http://"><img src="" alt="">Bienvenidos</a>
                 <div class="contenedorMenuCentral d-flex nav justify-content-center">
-                  <li class="linksMenuCentralUsuario"><a href="" class="linksMenuCentralUsuario itemsMenuCentralUsuario text-white p-2 fs-4">Inicio</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="linksMenuCentralUsuario  text-white p-2 fs-4 ">Películas y series</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="linksMenuCentralUsuario  text-white p-2 fs-4">Estrenos</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="linksMenuCentralUsuario  text-white p-2 fs-4">Sobre nosotros</a></li>
+                  <li class="linksMenuCentralUsuario "><a href="" class=" itemsMenu linksMenuCentralUsuario itemsMenuCentralUsuario text-white p-2 fs-4">Inicio</a></li>
+                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4 ">Películas y series</a></li>
+                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4">Estrenos</a></li>
+                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4">Sobre nosotros</a></li>
               </div> 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -112,36 +112,24 @@
            
         </div>
         <div class="container-fluid  align-content-center  ">
-          <div class="row justify-content-center  ">
-            <h4 class="colorTextoUsuario ">Lo más recomendado</h4>
-            <div class=" col-md-2 col-lg-4 pt-3 " style="width: 22rem;">
-              <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones border border-3" alt="...">
-            </div>
-            <div class=" col-md-2 col-lg-4 pt-3 " style="width: 22rem;">
-              <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones border border-3" alt="...">
-            </div>
-            <div class=" col-md-2 col-lg-4 pt-3 " style="width: 22rem;">
-              <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones border border-3" alt="...">
+          <div class="row   ">
+            <h4 class="colorTextoUsuario ">Tendencias !</h4>
+            <div id="cardPelicula"> 
+
             </div>
           <div class="row">
             <div>
-              <button  class=" color-botones mt-3 justify-content-end">Ver más</button>
+              <button  class=" color-botones mt-3 justify-content-end" onclick="obtenerPersonaje()">Ver más</button>
             </div>
           </div>
-          </div>  
+        </div>  
       </div> 
-        <h4 class="colorTextoUsuario p-3 text-center">Mi lista</h4>
+        <h4 class="colorTextoUsuario p-3 text-center">Películas y series</h4>
         <div class="container-fluid  align-content-center fondoMainUsuario ">
           <div class="row justify-content-center  ">
             <h4 class="colorTextoUsuario ">Lo más recomendado</h4>
-            <div class=" col-md-2 col-lg-4 pt-3 " style="width: 22rem;">
-              <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendacionesListas " alt="...">
-            </div>
-            <div class=" col-md-2 col-lg-4 pt-3 " style="width: 22rem;">
-              <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendacionesListas " alt="...">
-            </div>
-            <div class=" col-md-2 col-lg-4 pt-3 " style="width: 22rem;">
-              <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendacionesListas " alt="...">
+            <div class="cardPeliculasYseries">
+
             </div>
           <div class="row">
             <div>
@@ -194,5 +182,7 @@
     <script>
       AOS.init();
     </script>
+    <script src="arrayDePeliculas.js"></script>
+    <script src="localStorage.js"></script>
   </body>
 </html>
