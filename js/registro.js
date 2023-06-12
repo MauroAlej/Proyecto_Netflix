@@ -37,7 +37,8 @@ let objetoForm= {
     pass: '',
     repeatPass: '',
     role:'user',
-    login:false
+    login:false,
+    deleted: false
 }
 
 
