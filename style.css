@@ -1,3 +1,26 @@
-.color-main{
-justify-content: center;
+.custom-color{
+  color: beige;
+}
+
+.team-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.team-member {
+  margin-bottom: 30px;
+}
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-size: 20px;
+  font-weight: bold;
 }
