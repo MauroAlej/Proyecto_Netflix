@@ -94,7 +94,7 @@ const editUser = (id) => {
 // }
 
  const deleteUser = (id) => {
-     console.log('hola')
+     
      const userIndex = usersLocalStorage.findIndex((user) => user.id === id)
      usersLocalStorage[userIndex].deleted = true
      localStorage.setItem('users', JSON.stringify(usersLocalStorage))
