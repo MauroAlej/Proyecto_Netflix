@@ -28,8 +28,12 @@ const arrayPelicula = [
 localStorage.setItem('peliculas',JSON.stringify(arrayPelicula))
 //.......
 const divPadre = document.getElementById('cardPelicula')
+//nuevo
+const inputSearch = document.getElementById('idInputSearch')
+//
 
  console.log(arrayPelicula)
+
  divPadre.innerHTML = arrayPelicula.map((pelicula) => `
  
          <div  class=" card  " style="width: 18rem" ;>
@@ -43,11 +47,33 @@ const divPadre = document.getElementById('cardPelicula')
 
  `).join('');
 
- const agregarLista = (id) => {
-    const peliculaFilter = arrayPelicula.filter((pelicula) => 
-      pelicula.id === id)
-    }
+ //nuevo
+const filtroPelicula = (event) => {
+  const { name, value } = event.target 
+  let termino = value.toLowerCase() //convierte a minuscula
+  let filterPelicula = arrayPelicula.filter((pel) => {
+      let tituloPel = `${pel.titulo} `.toLocaleLowerCase()
+      let generoPel = `${pel.genero}`.toLocaleLowerCase()
+      return tituloPel.includes(termino) || generoPel.includes(termino)
+    })
+ // console.log(filterPelicula)
+ divPadre.innerHTML = filterPelicula
+ .map((pelicula) => `
+ 
+      <div  class=" card  " style="width: 18rem" ;>
+      <img src="${pelicula.img}" class="card-img-top " alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">${pelicula.titulo}</h5>
+        <p class="card-text ">${pelicula.genero}</p>
+        <p class="card-text ">${pelicula.descripcion}</p>
+      </div>
+      </div> 
 
+      `).join('');
+}
+ //
+inputSearch.addEventListener('input', filtroPelicula)
+ //
  
 
  
