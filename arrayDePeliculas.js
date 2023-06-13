@@ -26,62 +26,53 @@ const arrayPelicula = [
 
 //se crea localstorage
 localStorage.setItem('peliculas',JSON.stringify(arrayPelicula))
-//.......
-const divPadre = document.getElementById('cardPelicula')
-//nuevo
+const divCards = document.getElementById('divCards')
 const inputSearch = document.getElementById('idInputSearch')
-//
 
- console.log(arrayPelicula)
+divCards.innerHTML = arrayPelicula
+  .map(
+    (pelicula) => `
+  <div class="card mx-3 " style="width: 18rem;">
+    <img src="${pelicula.img}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${pelicula.titulo} </h5>
+      <p class="card-text">Género:  ${pelicula.genero}</p>
+      <p class="card-text">${pelicula.descripcion}</p>
 
- divPadre.innerHTML = arrayPelicula.map((pelicula) => `
- 
-         <div  class=" card  " style="width: 18rem" ;>
-         <img src="${pelicula.img}" class="card-img-top " alt="...">
-         <div class="card-body text-center">
-           <h5 class="card-title">${pelicula.titulo}</h5>
-           <p class="card-text ">${pelicula.genero}</p>
-           <p class="card-text ">${pelicula.descripcion}</p>
+    </div>
+  </div>
+`
+  )
+  .join('');
+
+const filtroPel = (event) => {
+  const { value } = event.target
+  let termino = value.toLowerCase()
+  let filterPel = arrayPelicula.filter((pel) => {
+    let tituloPel = `${pel.titulo}`.toLowerCase()
+    let generoPel = `${pel.genero}`.toLowerCase()
+    return tituloPel.includes(termino) || generoPel.includes(termino)
+  })
+
+  filterPel.length > 0
+    ?
+    divCards.innerHTML = filterPel
+      .map(
+        (pelicula) => `
+        <div class="card mx-3" style="width: 18rem;">
+        <img src="${pelicula.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${pelicula.titulo} </h5>
+          <p class="card-text">Género:  ${pelicula.genero}</p>
+          <p class="card-text">${pelicula.descripcion}</p>
+    
         </div>
-       </div> 
-
- `).join('');
-
- //nuevo
-const filtroPelicula = (event) => {
-  const { name, value } = event.target 
-  let termino = value.toLowerCase() //convierte a minuscula
-  let filterPelicula = arrayPelicula.filter((pel) => {
-      let tituloPel = `${pel.titulo} `.toLocaleLowerCase()
-      let generoPel = `${pel.genero}`.toLocaleLowerCase()
-      return tituloPel.includes(termino) || generoPel.includes(termino)
-    })
- // console.log(filterPelicula)
- divPadre.innerHTML = filterPelicula
- .map((pelicula) => `
- 
-      <div  class=" card  " style="width: 18rem" ;>
-      <img src="${pelicula.img}" class="card-img-top " alt="...">
-      <div class="card-body text-center">
-        <h5 class="card-title">${pelicula.titulo}</h5>
-        <p class="card-text ">${pelicula.genero}</p>
-        <p class="card-text ">${pelicula.descripcion}</p>
       </div>
-      </div> 
-
-      `).join('');
+      `
+      )
+      .join('')
+      :
+      divCards.innerHTML = 'No existe el título o género de película que buscas'
 }
- //
-inputSearch.addEventListener('input', filtroPelicula)
- //
- 
 
- 
-
- 
- 
-
-
-
-
-
+inputSearch.addEventListener('input', filtroPel)
