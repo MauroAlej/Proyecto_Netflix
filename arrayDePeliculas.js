@@ -38,6 +38,7 @@ divCards.innerHTML = arrayPelicula
       <h5 class="card-title">${pelicula.titulo} </h5>
       <p class="card-text">Género:  ${pelicula.genero}</p>
       <p class="card-text">${pelicula.descripcion}</p>
+      <a href="#" class="btn btn-outline-success">Agregar</a>
 
     </div>
   </div>
@@ -65,7 +66,8 @@ const filtroPel = (event) => {
           <h5 class="card-title">${pelicula.titulo} </h5>
           <p class="card-text">Género:  ${pelicula.genero}</p>
           <p class="card-text">${pelicula.descripcion}</p>
-    
+          <a href="#" class="btn btn-outline-success">Agregar</a>
+
         </div>
       </div>
       `
