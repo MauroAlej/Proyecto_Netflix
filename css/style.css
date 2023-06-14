@@ -69,8 +69,12 @@ h1{
     .color-botones{
         background-color: #7577CD ;
     }
-    .colorGenero{
+    .estiloPelicula{
         background: #DBDBEB;
+        padding-top: 200px;
+    }
+    .estiloListaUsuario{
+        padding-top: 180px;
     }
     .fondoMainUsuario{
         background: #7577CD;

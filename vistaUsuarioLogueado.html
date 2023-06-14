@@ -17,15 +17,20 @@
         <nav class="navbar navbar-dark colorMenu fixed-top">
             <div class="container-fluid">             
                 <a  class="navbar-brand" href="http://"><img src="" alt="">Bienvenidos</a>
-                <div class="contenedorMenuCentral d-flex nav justify-content-center">
+                <div class="contenedorMenuCentral d-flex nav ">
                   <li class="linksMenuCentralUsuario "><a href="" class=" itemsMenu linksMenuCentralUsuario itemsMenuCentralUsuario text-white p-2 fs-4">Inicio</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4 ">Películas y series</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4">Mi lista</a></li>
+                  <li class="linksMenuCentralUsuario"><a href="vistaUsuarioLogueado.html" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4 ">Películas y series</a></li>
+                  <li class="linksMenuCentralUsuario"><a href="peliculas.html" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4 ">Todas las categorías</a></li>
+                  <li class="linksMenuCentralUsuario"><a href="listaUsuario.html" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4">Mi lista</a></li>
                   <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4">Sobre nosotros</a></li>
+
               </div> 
+              
+             
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>       
+                </button>     
+
                 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                      <div class="offcanvas-header">
                         <h5 class="offcanvas-title fs-4" id="offcanvasDarkNavbarLabel">Bienvenidos</h5>
@@ -101,56 +106,23 @@
             </button>
         </div>
         <div class="container-fluid ">
-            <div class="row justify-content-end">
+            <div class="row justify-content-end ">
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <form class="d-flex pt-5 " role="search">
                         <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
                       </form>
                 </div>
-            </div>
-           
+            </div> 
         </div>
         <div class="container align-content-center  ">
-          <div class="row  justify-content-center">
-
-            <h4 class="colorTextoUsuario ">Tendencias</h4>
-            <div id="divCards" class=" d-flex pt-4 col-sm-12 col-md-4 col-lg-9 "> <!-- aqui se cargan las cards -->
-
-            
-        </div>  
+          <div class="row  justify-content-center pb-4">
+            <h4 class="colorTextoUsuario fs-1">Tendencias</h4>
+            <div id="divCards" class=" d-flex pt-4 col-sm-12 col-md-4 col-lg-9 "> <!-- aqui se cargan las cards -->     
+            </div>  
+          </div>    
       </div> 
-     
-      <h4 class="colorTextoUsuario p-3 text-center">Películas y series</h4>
-        <div class="container-fluid  align-content-center fondoMainUsuario ">
-          <div class="row justify-content-center  ">
-            <h4 class="colorTextoUsuario ">Lo más recomendado</h4>
-            <div class="cardsListaUsuario">
-
-            </div>
-          <div class="row">
-            <div>
-              <button  class=" color-botones m-3 justify-content-end">Ver más</button>
-            </div>
-          </div>
-          </div>  
-      </div> 
-
-      <div class="container-fluid pb-4 align-content-center colorGenero">
-        <div class="row justify-content-center pb-5 ">
-          <h4 class="text-center colorTextoUsuario p-3">Géneros</h4>
-          <div  data-aos="flip-left"  class=" col-md-2 col-lg-4 pt-5 " style="width: 22rem;">
-            <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones rounded-circle" alt="...">
-          </div>
-          <div   data-aos="flip-left"  class=" col-md-2 col-lg-4 pt-5 " style="width: 22rem;">
-            <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones rounded-circle" alt="...">
-          </div>
-          <div   data-aos="flip-left"  class=" col-md-2 col-lg-4 pt-5 " style="width: 22rem;">
-            <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones rounded-circle" alt="...">
-          </div>   
-        </div>
-    </div>   
     </main>
-    <footer class="detFooter">
+    <footer class="detFooter fs-5 text-center">
       <div class="container-fluid">
           <div class="row justify-content-center">
               <div class="col-sm-12 col-md-2 col-lg-3 pt-4">
@@ -172,7 +144,7 @@
               </div>   
           </div>
       </div>
-  </footer>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
    
     <script src="arrayDePeliculas.js"></script>

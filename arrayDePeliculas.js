@@ -28,6 +28,27 @@ const arrayPelicula = [
       genero: 'Drama, ciencia ficción',
       descripcion: 'Película española',
       img:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/4NCWCXDSNZHJVF3F4KWBMTIA2M.jpg'
+    },
+    {
+      id: 4,
+      titulo: "Fast & Furious X (2023)",
+      genero: "Acción, Crimen, Suspenso",
+      descripcion: 'Película americana',
+      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4A76udAc8XWmLs1T29Kocw5Go3H.jpg",
+    },
+    {
+      id: 5,
+      titulo: "Perros de caza (2023)",
+      genero: "Action y Adventura, Drama, Crimen",
+      descripcion: 'Película española',
+      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pWzp4HpDifuyNF8zkPIy8MKCg2d.jpg",
+    },
+    {
+      id: 6,
+      Título: "El Gato con Botas: El último deseo (2022)",
+      genero: "Animación, Familia, Fantasía, Aventura, Comedia",
+      descripcion: 'Película colombiana',
+      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lyP4WNmUiiOgl4g2z7ywE0z6SGF.jpg",
     }
         
 ]
@@ -53,6 +74,8 @@ divCards.innerHTML = localstorageDePelicula
 
     </div>
   </div>
+
+
 `
   )
   .join('');
@@ -102,4 +125,8 @@ if(peliculaExiste.length === 0){
   localStorage.setItem('listaUsuario', JSON.stringify(arrayPel))
 }
 }
+
+
+
+//-----------------------------------------------------------------------------
 

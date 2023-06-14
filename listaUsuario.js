@@ -3,7 +3,7 @@ const divCardsLista = document.getElementById('divCardsLista')
 
 divCardsLista.innerHTML = cardDeListaUsuario.map((pelicula) => 
 ` 
-<div class="card mx-3 text-center " style="width: 18rem;">
+<div class="card mx-3 text-center  " style="width: 18rem;">
   <img src="${pelicula.img}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${pelicula.titulo} </h5>
