@@ -64,21 +64,47 @@ const inputSearch = document.getElementById('idInputSearch')
 divCards.innerHTML = localstorageDePelicula    
   .map(
     (pelicula) => `
-  <div class="card mx-3 text-center " style="width: 18rem;">
+    
+  <div class="card m-3 text-center col-3 " style="width: 18rem;">
     <img src="${pelicula.img}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${pelicula.titulo} </h5>
       <p class="card-text">Género:  ${pelicula.genero}</p>
       <p class="card-text">${pelicula.descripcion}</p>
       <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
-
+      </div>
     </div>
-  </div>
+  
 
 
 `
   )
   .join('');
+
+
+
+//
+const divCardsMasPeliculas = document.getElementById('divCardsMasPeliculas')
+divCardsMasPeliculas.innerHTML = localstorageDePelicula    
+  .map(
+    (pelicula) => `
+    <div class="card m-3 text-center col-3 " style="width: 18rem;">
+    <img src="${pelicula.img}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${pelicula.titulo} </h5>
+      <p class="card-text">Género:  ${pelicula.genero}</p>
+      <p class="card-text">${pelicula.descripcion}</p>
+      <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
+      </div>
+    </div>
+  
+
+
+
+`
+  )
+  .join('');
+  //
 
 const filtroPel = (event) => {
   const { value } = event.target
@@ -94,16 +120,17 @@ const filtroPel = (event) => {
     divCards.innerHTML = filterPel
       .map(
         (pelicula) => `
-        <div class="card mx-3 text-center" style="width: 18rem;">
+        <div class="card m-3 text-center col-3 " style="width: 18rem;">
         <img src="${pelicula.img}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${pelicula.titulo} </h5>
           <p class="card-text">Género:  ${pelicula.genero}</p>
           <p class="card-text">${pelicula.descripcion}</p>
           <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
-
+          </div>
         </div>
-      </div>
+      
+    
       `
       )
       .join('')
