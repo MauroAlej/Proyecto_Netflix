@@ -1,34 +1,3 @@
-/*  const arrayPersonajes = []
-
- const divPadre = document.getElementById('cardPelicula')
-
- const personajes = fetch('https://rickandmortyapi.com/api/character')
- .then(repuestaApi => repuestaApi.json())
- .then(data => data.results.forEach(personaje => {
-  arrayPersonajes.push(personaje)
-}))
-.catch(console.warn)
-
-const obtenerPersonaje = () => {
-  console.log(arrayPersonajes)
-  divPadre.innerHTML = arrayPersonajes.map((personaje) => `
-  <div class=" container-fluid">
-      <div class="row ">
-          <div class="card col-md-2 col-lg-9 pt-3 " style="width: 13rem" ;>
-          <img src="${personaje.image}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Titulo/h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Más información</a>
-          </div>
-        </div> 
-          </div>
-      </div>
-  
-  </div>
-  
-  `)
-}  */
 
 // CREACIÓN DEL ARRAY: 
 const arrayPelicula = [
@@ -55,42 +24,57 @@ const arrayPelicula = [
         
 ]
 
-const divPadre = document.getElementById('cardPelicula')
+//se crea localstorage
+localStorage.setItem('peliculas',JSON.stringify(arrayPelicula))
+const divCards = document.getElementById('divCards')
+const inputSearch = document.getElementById('idInputSearch')
 
- console.log(arrayPelicula)
- divPadre.innerHTML = arrayPelicula.map((pelicula) => `
- <div class="container-fluid ">
-     <div class="row pt-2 justify-content-center">
-         <div  class=" card col-sm-12 col-md-4 col-lg-4 pt-3 " style="width: 18rem" ;>
-         <img src="${pelicula.img}" class="card-img-top " alt="...">
-         <div class="card-body text-center">
-           <h5 class="card-title">${pelicula.titulo}</h5>
-           <p class="card-text ">${pelicula.genero}</p>
-           <p class="card-text ">${pelicula.descripcion}</p>
-           <button class="btn btn-success" onclick="agregarLista(${pelicula.id})" type="button">Buscar</button>
+divCards.innerHTML = arrayPelicula
+  .map(
+    (pelicula) => `
+  <div class="card mx-3 " style="width: 18rem;">
+    <img src="${pelicula.img}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${pelicula.titulo} </h5>
+      <p class="card-text">Género:  ${pelicula.genero}</p>
+      <p class="card-text">${pelicula.descripcion}</p>
+      <a href="#" class="btn btn-outline-success">Agregar</a>
 
-         </div>
-       </div> 
-         </div>
-     </div>
- 
- </div> 
- 
- `).join('');
+    </div>
+  </div>
+`
+  )
+  .join('');
 
- const agregarLista = (id) => {
-    const peliculaFilter = arrayPelicula.filter((pelicula) => 
-      pelicula.id === id)
-    }
+const filtroPel = (event) => {
+  const { value } = event.target
+  let termino = value.toLowerCase()
+  let filterPel = arrayPelicula.filter((pel) => {
+    let tituloPel = `${pel.titulo}`.toLowerCase()
+    let generoPel = `${pel.genero}`.toLowerCase()
+    return tituloPel.includes(termino) || generoPel.includes(termino)
+  })
 
- 
+  filterPel.length > 0
+    ?
+    divCards.innerHTML = filterPel
+      .map(
+        (pelicula) => `
+        <div class="card mx-3" style="width: 18rem;">
+        <img src="${pelicula.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${pelicula.titulo} </h5>
+          <p class="card-text">Género:  ${pelicula.genero}</p>
+          <p class="card-text">${pelicula.descripcion}</p>
+          <a href="#" class="btn btn-outline-success">Agregar</a>
 
- 
+        </div>
+      </div>
+      `
+      )
+      .join('')
+      :
+      divCards.innerHTML = 'No existe el título o género de película que buscas'
+}
 
- 
- 
-
-
-
-
-
+inputSearch.addEventListener('input', filtroPel)
