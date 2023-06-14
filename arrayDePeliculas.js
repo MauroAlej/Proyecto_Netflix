@@ -1,3 +1,4 @@
+const arrayPel = []
 
 // CREACIÓN DEL ARRAY: 
 const arrayPelicula = [
@@ -26,19 +27,22 @@ const arrayPelicula = [
 
 //se crea localstorage
 localStorage.setItem('peliculas',JSON.stringify(arrayPelicula))
+const localstorageDePelicula = JSON.parse(localStorage.getItem('peliculas'))
+
+//
 const divCards = document.getElementById('divCards')
 const inputSearch = document.getElementById('idInputSearch')
-
-divCards.innerHTML = arrayPelicula
+//= arrayPelicula
+divCards.innerHTML = localstorageDePelicula    
   .map(
     (pelicula) => `
-  <div class="card mx-3 " style="width: 18rem;">
+  <div class="card mx-3 text-center" style="width: 18rem;">
     <img src="${pelicula.img}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${pelicula.titulo} </h5>
       <p class="card-text">Género:  ${pelicula.genero}</p>
       <p class="card-text">${pelicula.descripcion}</p>
-      <a href="#" class="btn btn-outline-success">Agregar</a>
+      <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
 
     </div>
   </div>
@@ -60,13 +64,13 @@ const filtroPel = (event) => {
     divCards.innerHTML = filterPel
       .map(
         (pelicula) => `
-        <div class="card mx-3" style="width: 18rem;">
+        <div class="card mx-3 text-center" style="width: 18rem;">
         <img src="${pelicula.img}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${pelicula.titulo} </h5>
           <p class="card-text">Género:  ${pelicula.genero}</p>
           <p class="card-text">${pelicula.descripcion}</p>
-          <a href="#" class="btn btn-outline-success">Agregar</a>
+          <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
 
         </div>
       </div>
@@ -78,3 +82,17 @@ const filtroPel = (event) => {
 }
 
 inputSearch.addEventListener('input', filtroPel)
+
+//AGREGAR A LA MI LISTA
+const agregarListaUsuario = (id) => {
+//console.log(id)
+const peliculaLocalstorage = JSON.parse(localStorage.getItem('listaUsuario')) || []
+const pelFilter = localstorageDePelicula.filter((pelicula) => 
+pelicula.id === id)
+const peliculaExiste = peliculaLocalstorage.filter((pel) => pel.id === id)
+if(peliculaExiste.length === 0){
+  arrayPel.push(pelFilter[0])
+  localStorage.setItem('listaUsuario', JSON.stringify(arrayPel))
+}
+}
+
