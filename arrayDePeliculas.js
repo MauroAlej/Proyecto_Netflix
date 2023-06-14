@@ -21,6 +21,13 @@ const arrayPelicula = [
       genero: 'Drama, ciencia ficción',
       descripcion: 'Película española',
       img:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/4NCWCXDSNZHJVF3F4KWBMTIA2M.jpg'
+    },
+    {
+      id:4,
+      titulo: 'Siete reyes deben morir',
+      genero: 'Drama, ciencia ficción',
+      descripcion: 'Película española',
+      img:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/4NCWCXDSNZHJVF3F4KWBMTIA2M.jpg'
     }
         
 ]
@@ -36,7 +43,7 @@ const inputSearch = document.getElementById('idInputSearch')
 divCards.innerHTML = localstorageDePelicula    
   .map(
     (pelicula) => `
-  <div class="card mx-3 text-center" style="width: 18rem;">
+  <div class="card mx-3 text-center " style="width: 18rem;">
     <img src="${pelicula.img}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${pelicula.titulo} </h5>
