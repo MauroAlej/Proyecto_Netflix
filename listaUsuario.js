@@ -3,7 +3,7 @@ const divCardsLista = document.getElementById('divCardsLista')
 
 divCardsLista.innerHTML = cardDeListaUsuario.map((pelicula) => 
 ` 
-<div class="card m-3 text-center col-3 " >
+<div class="card m-3 text-center col-10 col-md-4 col-lg-3" >
     <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
     <div class="card-body">
       <h5 class="card-title">${pelicula.titulo} </h5>
@@ -12,6 +12,8 @@ divCardsLista.innerHTML = cardDeListaUsuario.map((pelicula) =>
       <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-trash fa-shake fa-xl" style="color: #ff0000;"></i></button>
       </div>
     </div>
+
+      
 `
 )
 .join(''); 
