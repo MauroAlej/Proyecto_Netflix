@@ -3,7 +3,7 @@ const arrayPel = []
 // CREACIÓN DEL ARRAY: 
 const arrayPelicula = [
     { id:1,
-      titulo: 'El elefante es un mágico elefante',
+      titulo: 'El elefante mágico',
       genero: 'Comedia',
       descripcion: 'Película infantil',
       img:'https://www.pluggedin.com/wp-content/uploads/2023/03/the-magicians-elephant.jpg'
@@ -30,25 +30,25 @@ const arrayPelicula = [
       img:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/4NCWCXDSNZHJVF3F4KWBMTIA2M.jpg'
     },
     {
-      id: 4,
+      id: 5,
       titulo: "Fast & Furious X (2023)",
       genero: "Acción, Crimen, Suspenso",
       descripcion: 'Película americana',
-      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4A76udAc8XWmLs1T29Kocw5Go3H.jpg",
-    },
-    {
-      id: 5,
-      titulo: "Perros de caza (2023)",
-      genero: "Action y Adventura, Drama, Crimen",
-      descripcion: 'Película española',
-      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pWzp4HpDifuyNF8zkPIy8MKCg2d.jpg",
+      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4A76udAc8XWmLs1T29Kocw5Go3H.jpg"
     },
     {
       id: 6,
-      Título: "El Gato con Botas: El último deseo (2022)",
+      titulo: "Perros de caza (2023)",
+      genero: "Action y Adventura, Drama, Crimen",
+      descripcion: 'Película española',
+      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pWzp4HpDifuyNF8zkPIy8MKCg2d.jpg"
+    },
+    {
+      id:7 ,
+      titulo: "El Gato con Botas",
       genero: "Animación, Familia, Fantasía, Aventura, Comedia",
       descripcion: 'Película colombiana',
-      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lyP4WNmUiiOgl4g2z7ywE0z6SGF.jpg",
+      img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lyP4WNmUiiOgl4g2z7ywE0z6SGF.jpg"
     }
         
 ]
@@ -64,19 +64,15 @@ const inputSearch = document.getElementById('idInputSearch')
 divCards.innerHTML = localstorageDePelicula    
   .map(
     (pelicula) => `
-    
-  <div class="card m-3 text-center col-3 " style="width: 18rem;">
-    <img src="${pelicula.img}" class="card-img-top" alt="...">
+  <div class="card m-3 text-center col-3 " >
+    <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
     <div class="card-body">
       <h5 class="card-title">${pelicula.titulo} </h5>
       <p class="card-text">Género:  ${pelicula.genero}</p>
       <p class="card-text">${pelicula.descripcion}</p>
-      <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
+      <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;"></i></button>
       </div>
     </div>
-  
-
-
 `
   )
   .join('');
@@ -85,25 +81,24 @@ divCards.innerHTML = localstorageDePelicula
 
 //
 const divCardsMasPeliculas = document.getElementById('divCardsMasPeliculas')
-divCardsMasPeliculas.innerHTML = localstorageDePelicula    
+
+  divCardsMasPeliculas.innerHTML = localstorageDePelicula    
   .map(
     (pelicula) => `
-    <div class="card m-3 text-center col-3 " style="width: 18rem;">
-    <img src="${pelicula.img}" class="card-img-top" alt="...">
+    <div class="card m-3 text-center col-3 " >
+    <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
     <div class="card-body">
       <h5 class="card-title">${pelicula.titulo} </h5>
       <p class="card-text">Género:  ${pelicula.genero}</p>
       <p class="card-text">${pelicula.descripcion}</p>
-      <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
+      <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;"></i></button>
       </div>
     </div>
-  
-
-
-
 `
   )
   .join('');
+
+
   //
 
 const filtroPel = (event) => {
@@ -120,17 +115,15 @@ const filtroPel = (event) => {
     divCards.innerHTML = filterPel
       .map(
         (pelicula) => `
-        <div class="card m-3 text-center col-3 " style="width: 18rem;">
-        <img src="${pelicula.img}" class="card-img-top" alt="...">
+        <div class="card m-3 text-center col-3 " >
+        <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
         <div class="card-body">
           <h5 class="card-title">${pelicula.titulo} </h5>
           <p class="card-text">Género:  ${pelicula.genero}</p>
           <p class="card-text">${pelicula.descripcion}</p>
-          <button type='button' class="btn btn-outline-success" onclick="agregarListaUsuario(${pelicula.id})">Agregar</button>
+          <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;"></i></button>
           </div>
         </div>
-      
-    
       `
       )
       .join('')
