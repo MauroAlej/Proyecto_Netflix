@@ -24,10 +24,10 @@ const arrayPelicula = [
     },
     {
       id:4,
-      titulo: 'Siete reyes deben morir',
-      genero: 'Drama, ciencia ficción',
+      titulo: 'Colombiana',
+      genero: 'Acción',
       descripcion: 'Película española',
-      img:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/4NCWCXDSNZHJVF3F4KWBMTIA2M.jpg'
+      img:'https://es.web.img2.acsta.net/r_1280_720/medias/nmedia/18/83/57/40/19764793.jpg'
     },
     {
       id: 5,
@@ -39,18 +39,32 @@ const arrayPelicula = [
     {
       id: 6,
       titulo: "Perros de caza (2023)",
-      genero: "Action y Adventura, Drama, Crimen",
+      genero: "Acción",
       descripcion: 'Película española',
       img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/pWzp4HpDifuyNF8zkPIy8MKCg2d.jpg"
     },
     {
       id:7 ,
       titulo: "El Gato con Botas",
-      genero: "Animación, Familia, Fantasía, Aventura, Comedia",
+      genero: "Animación",
       descripcion: 'Película colombiana',
       img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lyP4WNmUiiOgl4g2z7ywE0z6SGF.jpg"
+    },
+    {
+      id:8 ,
+      titulo: "Bajo Cero",
+      genero: " Familia, Fantasía",
+      descripcion: 'Película española',
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3GAceaoCbvRWauQ_lahpBrdnxYlmO7fgtnSRp1ou2OM3NeuL8wr-ruaLLIWH0ywnLmfs&usqp=CAU"
+    },
+    {
+      id:9 ,
+      titulo: "Hasta el cielo",
+      genero: "Aventura, acción",
+      descripcion: 'Película colombiana',
+      img: "https://www.cine.com/media/noticias/2022/07/202207295965668.jpg"
     }
-        
+    
 ]
 
 //se crea localstorage
@@ -64,42 +78,18 @@ const inputSearch = document.getElementById('idInputSearch')
 divCards.innerHTML = localstorageDePelicula    
   .map(
     (pelicula) => `
-  <div class="card m-3 text-center col-3 " >
+  <div class="card m-3 text-center col-10 col-md-4 col-lg-3" >
     <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
     <div class="card-body">
       <h5 class="card-title">${pelicula.titulo} </h5>
       <p class="card-text">Género:  ${pelicula.genero}</p>
       <p class="card-text">${pelicula.descripcion}</p>
-      <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;"></i></button>
+      <button type='button' class="btn"  onclick="agregarListaUsuario(${pelicula.id})" ><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;" ></i></button>
       </div>
     </div>
 `
   )
   .join('');
-
-
-
-//
-const divCardsMasPeliculas = document.getElementById('divCardsMasPeliculas')
-
-  divCardsMasPeliculas.innerHTML = localstorageDePelicula    
-  .map(
-    (pelicula) => `
-    <div class="card m-3 text-center col-3 " >
-    <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
-    <div class="card-body">
-      <h5 class="card-title">${pelicula.titulo} </h5>
-      <p class="card-text">Género:  ${pelicula.genero}</p>
-      <p class="card-text">${pelicula.descripcion}</p>
-      <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;"></i></button>
-      </div>
-    </div>
-`
-  )
-  .join('');
-
-
-  //
 
 const filtroPel = (event) => {
   const { value } = event.target
@@ -115,15 +105,15 @@ const filtroPel = (event) => {
     divCards.innerHTML = filterPel
       .map(
         (pelicula) => `
-        <div class="card m-3 text-center col-3 " >
-        <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
-        <div class="card-body">
-          <h5 class="card-title">${pelicula.titulo} </h5>
-          <p class="card-text">Género:  ${pelicula.genero}</p>
-          <p class="card-text">${pelicula.descripcion}</p>
-          <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;"></i></button>
-          </div>
-        </div>
+        <div class="card m-3 text-center col-10 col-md-4 col-lg-3" >
+    <img src="${pelicula.img}" class="card-img-top" alt="..."  width= "200px" height= "200px">
+    <div class="card-body">
+      <h5 class="card-title">${pelicula.titulo} </h5>
+      <p class="card-text">Género:  ${pelicula.genero}</p>
+      <p class="card-text">${pelicula.descripcion}</p>
+      <button type='button' class="btn" onclick="agregarListaUsuario(${pelicula.id})"><i class="fa-solid fa-face-grin-stars fa-shake fa-xl" style="color: #ff6d02;"></i></button>
+      </div>
+    </div>
       `
       )
       .join('')
@@ -142,7 +132,13 @@ pelicula.id === id)
 const peliculaExiste = peliculaLocalstorage.filter((pel) => pel.id === id)
 if(peliculaExiste.length === 0){
   arrayPel.push(pelFilter[0])
+  peliculaLocalstorage.map((pelicula) => {
+   if(pelicula !== id ){
+    arrayPel.push(pelicula)
+   }
+  })
   localStorage.setItem('listaUsuario', JSON.stringify(arrayPel))
+  
 }
 }
 
