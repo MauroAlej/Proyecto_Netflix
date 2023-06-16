@@ -123,25 +123,43 @@ const filtroPel = (event) => {
 
 inputSearch.addEventListener('input', filtroPel)
 
-//AGREGAR A LA MI LISTA
-const agregarListaUsuario = (id) => {
-//console.log(id)
-const peliculaLocalstorage = JSON.parse(localStorage.getItem('listaUsuario')) || []
-const pelFilter = localstorageDePelicula.filter((pelicula) => 
-pelicula.id === id)
-const peliculaExiste = peliculaLocalstorage.filter((pel) => pel.id === id)
-if(peliculaExiste.length === 0){
-  arrayPel.push(pelFilter[0])
-  peliculaLocalstorage.map((pelicula) => {
-   if(pelicula !== id ){
-    arrayPel.push(pelicula)
-   }
-  })
-  localStorage.setItem('listaUsuario', JSON.stringify(arrayPel))
-  
-}
-}
+//AGREGAR A LA MI LISTA CONSULTA
 
+
+
+//VERSION ANTERIOR DE AGREGAR (muestra en mi lista pero si vuelvo atras y cargo de nuevo se reemplaza)
+ const agregarListaUsuario = (id) => {
+  const peliculaLocalstorage = JSON.parse(localStorage.getItem('listaUsuario')) || []
+  const pelFilter = localstorageDePelicula.filter((pelicula) => pelicula.id === id)
+  const peliculaExiste = peliculaLocalstorage.filter((pel) => pel.id === id)
+  if(peliculaExiste.length === 0){
+    arrayPel.push(pelFilter[0])
+    localStorage.setItem('listaUsuario', JSON.stringify(arrayPel))
+
+     }
+    }
+
+   /* esta funcion vuelve a recargar la lista cuando vuelvo a tras y agrego de nuevo  
+   const agregarListaUsuario = (id) => {
+
+      const peliculaLocalstorage = JSON.parse(localStorage.getItem('listaUsuario')) || []
+      const pelFilter = localstorageDePelicula.filter((pelicula) => 
+      pelicula.id === id)
+      const peliculaExiste = peliculaLocalstorage.filter((pel) => pel.id === id)
+      if(peliculaExiste.length === 0){
+        arrayPel.push(pelFilter[0])
+        peliculaLocalstorage.map((pelicula) => {
+         if(pelicula !== id ){
+          arrayPel.push(pelicula)
+         }
+        })
+        localStorage.setItem('listaUsuario', JSON.stringify(arrayPel))
+        
+      }
+      }  */
+    
+  
+  
 
 
 //-----------------------------------------------------------------------------
