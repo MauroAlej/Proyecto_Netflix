@@ -10,53 +10,56 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comic+Neue:wght@300&family=Dosis:wght@500&family=Exo:wght@300&family=Lato:wght@300&family=Lobster&display=swap" rel="stylesheet">   
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body class="fuente-body">
     <header>
-        <nav class="navbar navbar-dark colorMenu fixed-top">
-            <div class="container-fluid">             
-                <a  class="navbar-brand" href="http://"><img src="" alt="">Bienvenidos</a>
-                <div class="contenedorMenuCentral d-flex nav justify-content-center">
-                  <li class="linksMenuCentralUsuario "><a href="" class=" itemsMenu linksMenuCentralUsuario itemsMenuCentralUsuario text-white p-2 fs-4">Inicio</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4 ">Películas y series</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4">Estrenos</a></li>
-                  <li class="linksMenuCentralUsuario"><a href="" class="itemsMenu linksMenuCentralUsuario  text-white p-2 fs-4">Sobre nosotros</a></li>
-              </div> 
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>       
-                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title fs-4" id="offcanvasDarkNavbarLabel">Bienvenidos</h5>
-                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                     </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link fs-4" href="#">Administrar perfiles</a>
-                            </li> 
-                            <li class="nav-item">
-                                <a class="nav-link fs-4" href="#">Configuración</a>
-                            </li> 
-                            <li class="nav-item dropdown pt-2">
-                              <a class="nav-link fs-4 dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Subscripción
-                              </a>
-                              <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item linksMenuCentralUsuario fs-4" href="#">Mis planes</a></li>
-                                <li><a class="dropdown-item linksMenuCentralUsuario fs-4" href="#">Cancelar</a></li>                         
-                              </ul>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link fs-4" href="#">Cerrar sesión</a>
-                            </li>                            
-                        </ul>
-                       
-                    </div>
-                </div>
+        <nav class="navbar navbar-expand-lg colorMenu fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="/img/logo.png" alt="" width="110px" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 " >
+                <li class="nav-item linksMenuCentralUsuario " >
+                  <a class="nav-link active fs-4 " style="color: #DBDBEB;" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item linksMenuCentralUsuario ">
+                  <a class="nav-link fs-4"  style="color: #DBDBEB;" href="vistaUsuarioLogueado.html">Películas y series</a>
+                </li>
+                <li class="nav-item linksMenuCentralUsuario ">
+                  <a class="nav-link fs-4"  style="color: #DBDBEB;" href="listaUsuario.html">Mi lista</a>
+                </li>
+                <li class="nav-item linksMenuCentralUsuario ">
+                  <a class="nav-link fs-4"  style="color: #DBDBEB;" href="#">Sobre nosotros</a>
+                </li>
+              
+              </ul>
+              
             </div>
-        </nav> 
+            <div class="collapse navbar-collapse justify-content-end px-5" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item dropdown linksMenuCentralUsuario ">
+                  <a class="nav-link dropdown-toggle fs-4 " style="color: #DBDBEB;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Más opciones
+                  </a>
+                  <ul class="dropdown-menu justify-content-end ">
+                    <li class=" "><a class="dropdown-item fs-4" href="#">Configuración</a></li>
+                    <li class=" "><a class="dropdown-item fs-4" href="carrito.html">Carrito</a></li>
+                    <li><a class="dropdown-item fs-4" href="#">Cerrar sesión</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+        </nav>
+   
+   
+   
     </header>
     <main class="fondoMainUsuario" >
         <div id="carouselExampleDark" class="carousel carousel-fade slide ">
@@ -101,64 +104,29 @@
             </button>
         </div>
         <div class="container-fluid ">
-            <div class="row justify-content-end">
+            <div class="row justify-content-end ">
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <form class="d-flex pt-5 " role="search">
-                        <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                        <button class="btn color-botones" type="submit">Buscar</button>
+                        <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
                       </form>
                 </div>
-            </div>
-           
+            </div> 
         </div>
-        <div class="container-fluid  align-content-center  ">
-          <div class="row   ">
-            <h4 class="colorTextoUsuario ">Tendencias !</h4>
-            <div id="cardPelicula"> 
-
-            </div>
-          <div class="row">
-            <div>
-              <button  class=" color-botones mt-3 justify-content-end" onclick="obtenerPersonaje()">Ver más</button>
-            </div>
-          </div>
-        </div>  
-      </div> 
-        <h4 class="colorTextoUsuario p-3 text-center">Películas y series</h4>
-        <div class="container-fluid  align-content-center fondoMainUsuario ">
-          <div class="row justify-content-center  ">
-            <h4 class="colorTextoUsuario ">Lo más recomendado</h4>
-            <div class="cardPeliculasYseries">
-
-            </div>
-          <div class="row">
-            <div>
-              <button  class=" color-botones m-3 justify-content-end">Ver más</button>
-            </div>
-          </div>
+        <div class="container align-content-center  ">
+          <div class="row   pb-4">
+            <h4 class="colorTextoUsuario fs-1">Todas las películas</h4>
+            <div  class="   container  ">
+              <div id="divCards" class="row justify-content-center "> <!-- aqui se cargan las cards --> 
+              </div>     
+            </div> 
           </div>  
       </div> 
-
-      <div class="container-fluid pb-4 align-content-center colorGenero">
-        <div class="row justify-content-center pb-5 ">
-          <h4 class="text-center colorTextoUsuario p-3">Géneros</h4>
-          <div  data-aos="flip-left"  class=" col-md-2 col-lg-4 pt-5 " style="width: 22rem;">
-            <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones rounded-circle" alt="...">
-          </div>
-          <div   data-aos="flip-left"  class=" col-md-2 col-lg-4 pt-5 " style="width: 22rem;">
-            <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones rounded-circle" alt="...">
-          </div>
-          <div   data-aos="flip-left"  class=" col-md-2 col-lg-4 pt-5 " style="width: 22rem;">
-            <img src="https://es.web.img2.acsta.net/pictures/16/02/29/15/37/084763.jpg" class="card-img recomendaciones rounded-circle" alt="...">
-          </div>   
-        </div>
-    </div>   
     </main>
-    <footer class="detFooter">
+    <footer class="detFooter fs-5 text-center" >
       <div class="container-fluid">
           <div class="row justify-content-center">
               <div class="col-sm-12 col-md-2 col-lg-3 pt-4">
-                  <img src="/img/logo.png" alt="" width="120px" height="120px">
+                  <img src="/img/logoColorLila.png" alt="" width="190px" height="120px">
               </div>
           </div>
           <div class="row justify-content-between pt-5 pb-5">
@@ -176,13 +144,10 @@
               </div>   
           </div>
       </div>
-  </footer>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+   
     <script src="arrayDePeliculas.js"></script>
-    <script src="localStorage.js"></script>
+    <script src="https://kit.fontawesome.com/b629b846fa.js" crossorigin="anonymous"></script>
   </body>
 </html>
