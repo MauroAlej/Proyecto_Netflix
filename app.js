@@ -2,7 +2,7 @@
 const stockProductos = [
     {
       id: 1,
-      nombre: "Súper Mario Bros. La película (2023)",
+      nombre: "Súper Mario Bros",
       cantidad: 1,
       desc: "Animación, Familia, Aventura, Fantasía, Comedia",
       precio: 1200,
@@ -10,7 +10,7 @@ const stockProductos = [
     },
     {
       id: 2,
-      nombre: "Spider-Man: Cruzando el Multiverso (2023)",
+      nombre: "Spider-Man",
       cantidad: 1,
       desc: "Luchas con los mejores graficos",
       precio: 1500,
@@ -18,7 +18,7 @@ const stockProductos = [
     },
     {
       id: 3,
-      nombre: "Transformers: El despertar de las bestias (2023)",
+      nombre: "Transformers",
       cantidad: 1,
       desc: "Acción, Aventura, Ciencia ficción",
       precio: 1570,
@@ -42,7 +42,7 @@ const stockProductos = [
     },
     {
       id: 6,
-      nombre: "El Gato con Botas: El último deseo (2022)",
+      nombre: "El Gato con Botas",
       cantidad: 1,
       desc: "Animación, Familia, Fantasía, Aventura, Comedia",
       precio: 1200,
@@ -52,7 +52,7 @@ const stockProductos = [
       id: 7,
       nombre: "Titanic II (2010)",
       cantidad: 1,
-      desc: "Acción, Aventura, Suspense ",
+      desc: "Acción, Aventura",
       precio: 1400,
       img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/dGimwAyUWnZoffWTiiWnf9mFxV2.jpg",
     },
@@ -66,9 +66,9 @@ const stockProductos = [
     },
     {
       id: 9,
-      nombre: "Ant-Man y la Avispa: Quantumanía (2023)",
+      nombre: "Ant-Man y la Avispa",
       cantidad: 1,
-      desc: "Acción, Aventura, Ciencia ficción",
+      desc: "Acción, Aventura",
       precio: 1400,
       img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lKHy0ntGPdQeFwvNq8gK1D0anEr.jpg",
     },
@@ -207,5 +207,39 @@ const agregarProducto = (id) => {
     
       guardarStorage();
     };
+
+
+    function guardarStorage() {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+      }
+      
+      function eliminarProducto(id) {
+        const juegoId = id;
+        carrito = carrito.filter((juego) => juego.id !== juegoId);
+        mostrarCarrito();
+      }
+      function procesarPedido() {
+        carrito.forEach((prod) => {
+          const listaCompra = document.querySelector("#lista-compra tbody");
+          const { id, nombre, precio, img, cantidad } = prod;
+          if (listaCompra) {
+            const row = document.createElement("tr");
+            row.innerHTML += `
+                    <td>
+                    <img class="img-fluid img-carrito" src="${img}"/>
+                    </td>
+                    <td>${nombre}</td>
+                  <td>${precio}</td>
+                  <td>${cantidad}</td>
+                  <td>${precio * cantidad}</td>
+                  `;
+            listaCompra.appendChild(row);
+          }
+        });
+        totalProceso.innerText = carrito.reduce(
+          (acc, prod) => acc + prod.cantidad * prod.precio,
+          0
+        );
+      }
 
 //////////CARRITO//////////
