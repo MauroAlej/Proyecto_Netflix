@@ -60,7 +60,7 @@
             </div>
         </nav>
     </header>
-    <main class="fondoMainUsuario">
+    <main class="fondoMainUsuarioLogueado">
         <div id="carouselExampleDark" class="carousel carousel-fade slide ">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -97,24 +97,18 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="container-fluid ">
-            <div class="row justify-content-end ">
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <form class="d-flex pt-5 " role="search">
-                        <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container align-content-center  ">
-            <div class="row   pb-4">
-                <h4 class="colorTextoUsuario fs-1">Todas las películas</h4>
-                <div class="   container  ">
-                    <div id="divCards" class="row justify-content-center ">
-                        <!-- aqui se cargan las cards -->
+        <div class="container-fluid">
+                <div class="row justify-content-end ">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <form class="d-flex " role="search">
+                            <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
+                        </form>
                     </div>
                 </div>
-            </div>
+                <h4 class="colorTextoUsuario fs-1">Todas las películas</h4>
+                <div id="divCards" class="row justify-content-center fondoMainUsuarioLogueado ">
+                            <!-- aqui se cargan las cards -->
+                </div>
         </div>
     </main>
     <footer class="detFooter fs-5 text-center">

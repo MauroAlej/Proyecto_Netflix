@@ -21,12 +21,10 @@ h1 {
 .main-color-login{
     background: #7577CD;
 }
-/* .itemsMenu{
-    text-decoration: none;
-    border-radius: 8px;
-    list-style: none;
-
-} */
+.colorTextoSobreNosotros{
+    text-shadow: 1px 2px 2px #080957; 
+    color: #FF6D02;
+}
 
 .fondoMainUsuario {
     background-image: url('https://enterados.pe/wp-content/uploads/2020/12/cine-clasico.jpg');
@@ -90,7 +88,7 @@ h1 {
     padding-top: 180px;
 }
 
-.fondoMainUsuario {
+.fondoMainUsuarioLogueado {
     background: #7577CD;
 }
 
