@@ -12,7 +12,7 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
     <td> ${movie.elenco}</td>
     <td> ${movie.año}</td>
     <td>     
-               
+      d
     </td>
  `
 
