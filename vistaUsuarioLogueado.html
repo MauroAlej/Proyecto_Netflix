@@ -34,11 +34,9 @@
                             <a class="nav-link fs-4" style="color: #DBDBEB;" href="listaUsuario.html">Mi lista</a>
                         </li>
                         <li class="nav-item linksMenuCentralUsuario ">
-                            <a class="nav-link fs-4" style="color: #DBDBEB;" href="#">Sobre nosotros</a>
+                            <a class="nav-link fs-4" style="color: #DBDBEB;" href="sobrenosotros.html">Sobre nosotros</a>
                         </li>
-
                     </ul>
-
                 </div>
                 <div class="collapse navbar-collapse justify-content-end px-5" id="navbarSupportedContent">
                     <ul class="navbar-nav  ">
@@ -60,7 +58,7 @@
             </div>
         </nav>
     </header>
-    <main class="fondoMainUsuario">
+    <main class="fondoMainUsuarioLogueado">
         <div id="carouselExampleDark" class="carousel carousel-fade slide ">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -97,24 +95,18 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="container-fluid ">
-            <div class="row justify-content-end ">
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <form class="d-flex pt-5 " role="search">
-                        <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container align-content-center  ">
-            <div class="row   pb-4">
-                <h4 class="colorTextoUsuario fs-1">Todas las películas</h4>
-                <div class="   container  ">
-                    <div id="divCards" class="row justify-content-center ">
-                        <!-- aqui se cargan las cards -->
+        <div class="container-fluid">
+                <div class="row justify-content-end ">
+                    <div class="col-sm-12 col-md-4 col-lg-4 pt-3">
+                        <form class="d-flex " role="search">
+                            <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
+                        </form>
                     </div>
                 </div>
-            </div>
+                <h4 class="colorTextoUsuario fs-1">Todas las películas</h4>
+                <div id="divCards" class="row justify-content-center fondoMainUsuarioLogueado ">
+                            <!-- aqui se cargan las cards -->
+                </div>
         </div>
     </main>
     <footer class="detFooter fs-5 text-center">
