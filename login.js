@@ -43,31 +43,31 @@ const objetoForm = {
   pass: '',
 };
 
-const inputChange = (event) => {
-  const { name, value } = event.target;
-  objetoForm[name] = value;
-  switch (name) {
-    case 'user':
-      if (value.trim() === '') {
-        divErrUser.style.display = 'block'; // Muestra el mensaje de error del campo de usuario
-      } else {
-        divErrUser.style.display = 'none'; // Oculta el mensaje de error del campo de usuario
-      }
-      inputUser.classList.remove('is-invalid');
-      break;
-    case 'pass':
-      if (value.trim() === '') {
-        divErrPass.style.display = 'block'; // Muestra el mensaje de error del campo de contraseña
-      } else {
-        divErrPass.style.display = 'none'; // Oculta el mensaje de error del campo de contraseña
-      }
-      inputPass.classList.remove('is-invalid');
-      break;
-    default:
-      console.log('Error: No existe ese "name" en el objeto');
-      break;
-  }
-};
+// const inputChange = (event) => {
+//   const { name, value } = event.target;
+//   objetoForm[name] = value;
+//   switch (name) {
+//     case 'user':
+//       if (value.trim() === '') {
+//         divErrUser.style.display = 'block'; // Muestra el mensaje de error del campo de usuario
+//       } else {
+//         divErrUser.style.display = 'none'; // Oculta el mensaje de error del campo de usuario
+//       }
+//       inputUser.classList.remove('is-invalid');
+//       break;
+//     case 'pass':
+//       if (value.trim() === '') {
+//         divErrPass.style.display = 'block'; // Muestra el mensaje de error del campo de contraseña
+//       } else {
+//         divErrPass.style.display = 'none'; // Oculta el mensaje de error del campo de contraseña
+//       }
+//       inputPass.classList.remove('is-invalid');
+//       break;
+//     default:
+//       console.log('Error: No existe ese "name" en el objeto');
+//       break;
+//   }
+// };
 
 const sendRegister = () => {
   const { user, pass } = objetoForm;
