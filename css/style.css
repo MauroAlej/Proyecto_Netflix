@@ -267,3 +267,21 @@ body {
 .cambiar-color-boton{
     color: #DBDBEB;
 }
+.pagina404{
+    
+    background-image: url("../img/error404.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+    
+   
+   
+
+    
+
+    
+    
+}
