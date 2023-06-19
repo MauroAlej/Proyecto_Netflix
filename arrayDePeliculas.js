@@ -1,4 +1,10 @@
 const arrayPel = []
+const listaFavorito= JSON.parse(localStorage.getItem('listaUsuario')) || []
+if(listaFavorito.length > 0 ){
+  listaFavorito.forEach((pelicula)=>{
+    arrayPel.push(pelicula)
+  })
+}
 
 // CREACIÓN DEL ARRAY: 
 const arrayPelicula = [
