@@ -7,10 +7,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #e5e5f7;
-    background-image:  radial-gradient(#1f2179 0.5px, transparent 0.5px), radial-gradient(#2f308e 0.5px, #e5e5f7 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0,10px 10px;
+   background-color: #7577CD;
     display: flex;
     min-height: 100vh;
 }
@@ -24,6 +21,7 @@ body{
     border-radius: 10px;
     box-shadow: 0 10px 5px -5px rgb(0 0 0 / 30%);
     text-align: center;
+    margin-top: 90px;
 }
 
 .form_tittle{
@@ -43,7 +41,7 @@ body{
 
 }
 
-.form_input{
+.form-control{
     width: 100%;
     background-color: none;
     color: #706c6c;
@@ -72,7 +70,7 @@ body{
 }
 
 .form_submit{
-    background: blue;
+    background: #ff6d02;
     color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
