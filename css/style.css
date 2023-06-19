@@ -277,3 +277,14 @@ body {
     align-items: center;
     
 }
+.colorContenedorLogin{
+    
+    background: #DBDBEB;
+}
+.margenMainLogin{
+    padding-top: 200px;
+}
+.colorBotonLogin{
+    background: #FF8303;
+    color: #FF8303;
+}
