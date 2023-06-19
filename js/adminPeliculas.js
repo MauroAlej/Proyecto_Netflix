@@ -9,9 +9,9 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
  
  `
  <tr>
-    <th> ${movie.nombre}</th>
+    <th> ${movie.titulo}</th>
     <td> ${movie.genero}</td>
-    <td> ${movie.elenco}</td>
+    <td> ${movie.descripcion}</td>
     <td> ${movie.año}</td>
     <td>     
     
@@ -32,7 +32,7 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
           <form>
           <div class="mb-3">
             <label for="exampleInputEmail1${movie.id}" class="form-label text-black">Nombre</label>
-            <input type="text" class="form-control" id="inputNombre${movie.id}" aria-describedby="emailHelp" value=${movie.nombre} name='nombre'>
+            <input type="text" class="form-control" id="inputNombre${movie.id}" aria-describedby="emailHelp" value=${movie.titulo} name='nombre'>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
