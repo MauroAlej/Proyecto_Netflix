@@ -69,7 +69,7 @@ const register = ()=> {
         arrayUsuarios.push(objetoForm)
         localStorage.setItem('users', JSON.stringify(arrayUsuarios))
         setTimeout(()=> {
-            // location.href = 'login.html'
+            location.href = '../vistaUsuarioLogueado.html'
         }, 2000)
         }else{
            alert('Las contraseñas no coinciden')
