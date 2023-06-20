@@ -1,3 +1,5 @@
+
+
 const arrayPel = []
 const listaFavorito= JSON.parse(localStorage.getItem('listaUsuario')) || []
 if(listaFavorito.length > 0 ){
@@ -97,7 +99,11 @@ const localstorageDePelicula = JSON.parse(localStorage.getItem('peliculas'))
 
 //
 const divCards = document.getElementById('divCards')
+
 const inputSearch = document.getElementById('idInputSearch')
+
+
+
 
 divCards.innerHTML = localstorageDePelicula    
   .map(
@@ -115,13 +121,28 @@ divCards.innerHTML = localstorageDePelicula
   )
   .join('');
 
+  let msgErrSearch = document.getElementById('msgErrSearch')
+  msgErrSearch.classList = 'd-none'
+
 const filtroPel = (event) => {
   const { value } = event.target
+  console.log(value)
+  if(!value){
+    console.log('vacio')
+    inputSearch.classList.add('is-invalid')
+    msgErrSearch.classList = 'd-block'
+    
+  }else {
+    inputSearch.classList.remove('is-invalid')
+    msgErrSearch.classList = 'd-none'
+  }
+ 
+
   let termino = value.toLowerCase()
   let filterPel = arrayPelicula.filter((pel) => {
     let tituloPel = `${pel.titulo}`.toLowerCase()
     let generoPel = `${pel.genero}`.toLowerCase()
-    return tituloPel.includes(termino) || generoPel.includes(termino)
+    return tituloPel.includes(termino) || generoPel.includes(termino)    
   })
 
   filterPel.length > 0
@@ -144,13 +165,11 @@ const filtroPel = (event) => {
       :
       divCards.innerHTML = 'No existe el título o género de película que buscas'
 }
-
 inputSearch.addEventListener('input', filtroPel)
 
 
 
 
-//VERSION ANTERIOR DE AGREGAR (muestra en mi lista pero si vuelvo atras y cargo de nuevo se reemplaza)
  const agregarListaUsuario = (id) => {
   const peliculaLocalstorage = JSON.parse(localStorage.getItem('listaUsuario')) || []
   const pelFilter = localstorageDePelicula.filter((pelicula) => pelicula.id === id)
@@ -164,7 +183,4 @@ inputSearch.addEventListener('input', filtroPel)
 
 
   
-  
-
-
-
+ 
