@@ -26,8 +26,10 @@ const objetoForm = {
 
 const changeInput = (event) => {
   const { name, value } = event.target
+
   objetoForm[name] = value
-   switch (name) {
+
+  switch (name) {
     case 'user':
       divErrUser.classList = 'd-none'
       inputUser.classList.remove('is-invalid');

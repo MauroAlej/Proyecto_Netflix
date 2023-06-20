@@ -18,13 +18,22 @@ divCardsLista.innerHTML = cardDeListaUsuario.map((pelicula) =>
 )
 .join(''); 
 
-
-const eliminarPeliculaDeLista = (id) => {
+//borrado fisico
+ const eliminarPeliculaDeLista = (id) => {
   console.log(id)
   const listaPeliculaFilter = cardDeListaUsuario.filter((pelicula) => pelicula.id !== id)
-  console.log(listaPeliculaFilter)  
-  }
+  localStorage.setItem('listaUsuario',JSON.stringify(listaPeliculaFilter))
+  location.reload()
+} 
   
 
 
-  
+/*   const eliminarPeliculaDeLista = (id) => {
+     
+    const userIndex = cardDeListaUsuario.findIndex((pelicula) => pelicula.id === id)
+    cardDeListaUsuario[userIndex].deleted = true
+    localStorage.setItem('listaUsuario', JSON.stringify(cardDeListaUsuario))
+    location.reload()
+   
+}
+ */
