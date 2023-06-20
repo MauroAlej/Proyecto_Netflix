@@ -20,6 +20,7 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
     </button>
    
     <button id= "buttonDeletedMovie" class= "btn btn-danger" onclick= 'deleteMovie(${movie.id})'> Eliminar </button>
+    <button id= "" class= "btn btn-warning" onclick= 'deleteMovie(${movie.id})'> Destacar </button>
    
     <div class="modal fade" id="exampleModal${movie.id}" tabindex="-1" aria-labelledby="exampleModalLabel${movie.id}" aria-hidden="true">
       <div class="modal-dialog">
