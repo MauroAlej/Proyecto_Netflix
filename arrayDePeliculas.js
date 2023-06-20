@@ -121,10 +121,23 @@ divCards.innerHTML = localstorageDePelicula
   )
   .join('');
 
-
+  let msgErrSearch = document.getElementById('msgErrSearch')
+  msgErrSearch.classList = 'd-none'
 
 const filtroPel = (event) => {
   const { value } = event.target
+  console.log(value)
+  if(!value){
+    console.log('vacio')
+    inputSearch.classList.add('is-invalid')
+    msgErrSearch.classList = 'd-block'
+    
+  }else {
+    inputSearch.classList.remove('is-invalid')
+    msgErrSearch.classList = 'd-none'
+  }
+ 
+
   let termino = value.toLowerCase()
   let filterPel = arrayPelicula.filter((pel) => {
     let tituloPel = `${pel.titulo}`.toLowerCase()
@@ -170,41 +183,4 @@ inputSearch.addEventListener('input', filtroPel)
 
 
   
-  
-
-//validacion
-/* let msgErrSearch = document.getElementById('msgErrSearch')
-let butonBuscar = document.getElementById('botonBuscar')
-
-msgErrSearch.classList = 'd-none'
-
-let objetoForm = {
-  search: ''
-}
-
-const inputChange = (event) => {
-  const { name, value} = event.target
-  objetoForm[name] = value
-  switch (search) {
-    case 'search':
-      msgErrSearch.classList = 'd-none'
-      idInputSearch.classList.remove('is-invalid')
-      break;
-  }
-}
-
-const buscar = () => { 
- const {search} = objetoForm
-if(!search){
-  msgErrSearch.classList = 'd-block text-danger'
-  idInputSearch.classList.add('is-invalid')
-}
-
-}
-botonBuscar.addEventListener('click', buscar)
-
-  */
-
-//--------------------------------------------
-
-
+ 
