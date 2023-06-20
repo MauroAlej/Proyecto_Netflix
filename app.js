@@ -241,5 +241,69 @@ const agregarProducto = (id) => {
           0
         );
       }
+// finalizo el listado de la compra
+      function enviarCompra(e){
+        e.preventDefault()
+        const persona = document.querySelector('#persona').value
+        const email = document.querySelector('#correo').value
+     
+        if(email === '' || persona == ''){
+          Swal.fire({
+            title: "¡Debes completar tu email y nombre!",
+            text: "Rellena el formulario",
+            icon: "error",
+            confirmButtonText: "Aceptar",
+        })
+      } else {
+     
+        const btn = document.getElementById('button');
+
+        // document.getElementById('form')
+        //  .addEventListener('submit', function(event) {
+        //    event.preventDefault();
+        
+           btn.value = 'Enviando...';
+        
+           const serviceID = 'default_service';
+           const templateID = 'template_7763kru';
+        
+           emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              btn.value = 'Finalizando Compra';
+              alert('Enviado a nuestra DB SCREENFLIX!');
+            }, (err) => {
+              btn.value = 'Finalizando Compra';
+              alert(JSON.stringify(err));
+            
+        });
+
+
+// finalizo el listado de la compra
+
+
+const spinner = document.querySelector('#spinnerr')
+   spinner.classList.add('d-flex')
+   spinner.classList.remove('d-none')
+
+   setTimeout(() => {
+     spinner.classList.remove('d-flex')
+     spinner.classList.add('d-none')
+     formulario.reset()
+
+     const alertExito = document.createElement('p')
+     alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
+     alertExito.textContent = 'Compra realizada correctamente'
+     formulario.appendChild(alertExito)
+
+     setTimeout(() => {
+       alertExito.remove()
+     }, 3000)
+
+
+   }, 3000)
+  }
+ localStorage.clear()
+}
+ 
 
 //////////CARRITO//////////

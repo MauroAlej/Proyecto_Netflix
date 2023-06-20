@@ -15,11 +15,12 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
     <td> ${movie.año}</td>
     <td>     
     
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${movie.id}">
+    <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal${movie.id}">
       Editar
     </button>
    
     <button id= "buttonDeletedMovie" class= "btn btn-danger" onclick= 'deleteMovie(${movie.id})'> Eliminar </button>
+    <button id= "" class= "btn btn-warning" onclick= 'deleteMovie(${movie.id})'> Destacar </button>
    
     <div class="modal fade" id="exampleModal${movie.id}" tabindex="-1" aria-labelledby="exampleModalLabel${movie.id}" aria-hidden="true">
       <div class="modal-dialog">
@@ -46,7 +47,7 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
             <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
             <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value=${movie.año}>
           </div>
-          <button type="button" class="btn btn-primary" onclick='editMovie(${movie.id})'>Guardar Cambios</button>
+          <button type="button" class="btn btn-secondary" onclick='editMovie(${movie.id})'>Guardar Cambios</button>
         </form>
           </div>
           

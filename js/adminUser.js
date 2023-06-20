@@ -18,7 +18,7 @@ tbodyUser. innerHTML = usersLocalStorage.map((user)=>
     <td> ${user.role}</td>
     <td>
     
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2${user.id}">
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2${user.id}">
      Editar
     </button>
     
@@ -28,7 +28,7 @@ tbodyUser. innerHTML = usersLocalStorage.map((user)=>
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel2${user.id}"></h1>
+            <h1 class="modal-title fs-5 text-black" id="exampleModalLabel2${user.id}"> Usuario</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -42,7 +42,7 @@ tbodyUser. innerHTML = usersLocalStorage.map((user)=>
             <label for="exampleInputPassword13${user.id}" class="form-label text-black">Role</label>
             <input type="password" class="form-control" id="exampleInputPassword13${user.id}">
           </div>
-          <button type="button" class="btn btn-primary" onclick='editUser(${user.id})'>Guardar Cambios</button>
+          <button type="button" class="btn btn-secondary" onclick='editUser(${user.id})'>Guardar Cambios</button>
         </form>
           </div>
           
