@@ -1,3 +1,4 @@
+
 let inputUser = document.getElementById('inputUser')
 let inputPass = document.getElementById('inputPass')
 
@@ -49,10 +50,10 @@ const changeInput = (event) => {
 const sendRegister = () => {
   const { user, pass } = objetoForm
   if (user && pass) {
-    const userLS = usersArray.find(userLs => userLs.user === user)
+    const userLS = usersArray.find(userLs => userLs.username === user)
     const userIndex = usersArray.findIndex(userLs => userLs.user === user)
 
-    if (userLS.user === user && userLS.pass === pass) {
+    if (userLS.username === user && userLS.pass === pass) {
       if (userLS.role === 'user') {
         usersArray[userIndex].login = true
         localStorage.setItem('users', JSON.stringify(usersArray))
