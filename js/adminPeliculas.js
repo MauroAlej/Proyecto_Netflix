@@ -1,6 +1,6 @@
 let movieLocalStorage = JSON.parse(localStorage.getItem('peliculas')) || []
 
-console.log(movieLocalStorage)
+
 
 let tbodyMovie = document.getElementById('tbodyMovie')
 tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=> 
@@ -36,7 +36,15 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
-            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}">
+            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value=${movie.genero}>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
+            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value=${movie.descripcion}>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
+            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value=${movie.año}>
           </div>
           <button type="button" class="btn btn-primary" onclick='editMovie(${movie.id})'>Guardar Cambios</button>
         </form>
@@ -71,7 +79,7 @@ inputNombre.forEach((inputNombre)=> {
 
 const editMovie = (id) => {
   const movieEditIndex = movieLocalStorage.findIndex((movie) => movie.id === id)
-    movieLocalStorage[movieEditIndex].nombre = inputChangeMovie
+    movieLocalStorage[movieEditIndex].titulo = inputChangeMovie
     localStorage.setItem('peliculas', JSON.stringify(movieLocalStorage))
     inputChangeMovie= ''
     console.log(movieLocalStorage)
