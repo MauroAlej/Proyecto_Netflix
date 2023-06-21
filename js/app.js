@@ -133,14 +133,14 @@ stockProductos.forEach((prod) => {
   const { id, nombre, precio, desc, img, cantidad } = prod;
   if (contenedor) {
     contenedor.innerHTML += `
-    <div class="card mt-3" style="width: 18rem;">
+    <div class="card mt-3 mx-2" style="width: 17rem;"   >
     <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">${nombre}</h5>
       <p class="card-text">Precio: ${precio}</p>
       <p class="card-text">Descripcion: ${desc}</p>
       <p class="card-text">Cantidad: ${cantidad}</p>
-      <button class="btn btn-primary" onclick="agregarProducto(${id})">Comprar Producto</button>
+      <button class="btn fs-4 " style="color: #FF8303;" onclick="agregarProducto(${id})">Comprar Producto</button>
     </div>
   </div>
     `;
@@ -180,7 +180,7 @@ const agregarProducto = (id) => {
           <p>Producto: ${nombre}</p>
         <p>Precio: ${precio}</p>
         <p>Cantidad :${cantidad}</p>
-        <button class="btn btn-danger"  onclick="eliminarProducto(${id})">Eliminar producto</button>
+        <button class="btn "  onclick="eliminarProducto(${id})"><i class="fa-solid fa-trash fa-shake fa-xl" style="color: #ff0000;"></i></button>
           </div>
         </div>
         
