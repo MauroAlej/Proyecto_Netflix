@@ -33,19 +33,19 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
           <form>
           <div class="mb-3">
             <label for="exampleInputEmail1${movie.id}" class="form-label text-black">Nombre</label>
-            <input type="text" class="form-control" id="inputNombre${movie.id}" aria-describedby="emailHelp" value=${movie.titulo} name='nombre'>
+            <input type="text" class="form-control" id="inputNombre${movie.id}" aria-describedby="emailHelp" value="${movie.titulo}" name='nombre'>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
-            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value=${movie.genero}>
+            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value="${movie.genero}">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
-            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value=${movie.descripcion}>
+            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value="${movie.descripcion}">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1${movie.id}" class="form-label text-black">Género</label>
-            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value=${movie.año}>
+            <input type="text" class="form-control" id="exampleInputPassword1${movie.id}" value="${movie.año}">
           </div>
           <button type="button" class="btn btn-secondary" onclick='editMovie(${movie.id})'>Guardar Cambios</button>
         </form>
