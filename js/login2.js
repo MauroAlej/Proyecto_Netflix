@@ -5,6 +5,7 @@ let buttonLogin = document.getElementById('buttonLogin')
 let localStorageArray = JSON.parse(localStorage.getItem('users')) || []
 let arrayUsuarios = []
 
+
 let objetoForm= {
 
     username: '',
@@ -40,7 +41,7 @@ const login = () =>{
                 localStorage.setItem('users', JSON.stringify(localStorageArray))
                 console.log(usuario.id)
                 
-                //   location.href = `vistaUsuarioLogueado.html?id=${usuario.id}`
+                   location.href = `vistaUsuarioLogueado.html?id=${usuario.id}`
             }
         }
     }
