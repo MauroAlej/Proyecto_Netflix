@@ -1,11 +1,11 @@
 let usersLocalStorage = JSON.parse(localStorage.getItem('users')) || []
 
-let userID1 = location.search.split('=')[1]
+let userIDSearch = location.search.split('=')[1]
 let user1 = usersLocalStorage.filter((usuario)=> {
-    return usuario.id === parseInt(userID1)
+    return usuario.id === parseInt(userIDSearch)
 })
 
-let userIndex = usersLocalStorage.findIndex((user12) =>user12.id === parseInt(userID1))
+let userIndex = usersLocalStorage.findIndex((usuario) => usuario.id === parseInt(userIDSearch))
 
 const buttonLogout = document.getElementById('logout')
 
