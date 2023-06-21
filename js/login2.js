@@ -20,11 +20,11 @@ const inputChange = (event) =>{
 const login = () =>{
     
     const {username, pass} = objetoForm
-    let usuario = localStorageArray.filter(usuario => {
+    const usuario = localStorageArray.filter(usuario => {
         return usuario.username === username 
     }) 
 
-    let usuarioIndex = localStorageArray.findIndex(usuario => {
+    const usuarioIndex = localStorageArray.findIndex(usuario => {
         return usuario.username === username 
     }) 
     console.log(usuarioIndex)
@@ -34,12 +34,13 @@ const login = () =>{
             if(usuario[0].role === 'admin'){
                 localStorageArray[usuarioIndex].login = true
                 localStorage.setItem('users', JSON.stringify(localStorageArray))
-                location.href = 'admin.html'
+                location.href = `admin.html?id=${usuario.id}`
             } else{
                 localStorageArray[usuarioIndex].login = true
                 localStorage.setItem('users', JSON.stringify(localStorageArray))
+                console.log(usuario.id)
                 
-                 location.href = 'vistaUsuarioLogueado.html'
+                //   location.href = `vistaUsuarioLogueado.html?id=${usuario.id}`
             }
         }
     }
