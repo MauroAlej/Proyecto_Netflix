@@ -36,7 +36,7 @@ let objetoForm= {
     usermail: '',
     pass: '',
     repeatPass: '',
-    role:'user',
+    role:'admin',
     login:false,
     deleted: false
 }
