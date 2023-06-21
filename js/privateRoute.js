@@ -1,0 +1,1 @@
+let localStorageArray = JSON.parse(localStorage.getItem('users')) || []
