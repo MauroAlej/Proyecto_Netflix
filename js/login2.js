@@ -2,8 +2,21 @@ let inputUser = document.getElementById('inputUser')
 let passUser = document.getElementById('inputPass')
 let buttonLogin = document.getElementById('buttonLogin')
 
+//probando
+let divErrUser = document.getElementById('divErrUser')
+let divErrPass = document.getElementById('divErrPass')
+//-----
+
+
 let localStorageArray = JSON.parse(localStorage.getItem('users')) || []
 let arrayUsuarios = []
+
+//probando
+divErrUser.classList='d-none'
+divErrPass.classList='d-none'
+
+
+//---
 
 let objetoForm= {
 
@@ -15,11 +28,36 @@ let objetoForm= {
 const inputChange = (event) =>{
     const {name,value}= event.target
     objetoForm[name]=value
+ 
+    //probando:
+    switch (name) {
+        case 'username':
+            divErrUser.classList = 'd-none'
+            break;
+        case 'pass':
+            divErrPass.classList = 'd-none'
+            break;
+        }
+ //--- 
+
+   
 }
 
 const login = () =>{
+
     
     const {username, pass} = objetoForm
+//probando
+    if(!username && !pass){
+        alert('Debe completar los campos usuario y contraseña')
+    }else if(!username){
+        divErrUser.classList = 'd-blox text-danger'
+
+    }else if(!pass){
+        divErrPass.classList = 'd-blox text-danger'
+    }
+//--
+
     let usuario = localStorageArray.filter(usuario => {
         return usuario.username === username 
     }) 

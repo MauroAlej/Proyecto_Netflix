@@ -246,12 +246,6 @@ body {
 }
 
 
-/* pagina principal  */
-
-/* body {
-    background-color: #e6e6fa;
-} */
-
 .jumbotron {
     background-image: url("../img/imgpagprin.jpg");
     background-size: cover;
@@ -292,4 +286,7 @@ body {
 }
 .margenAdmin{
     padding-top: 78px;
+}
+.estiloMainCarrito{
+    padding-top: 120px;
 }

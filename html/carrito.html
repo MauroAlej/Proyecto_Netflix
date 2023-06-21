@@ -44,8 +44,7 @@
                       
                     <li class="nav-item">
                       <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#modal">
-<!--                         <i class="bi bi-cart mx-5" id="carritoContenedor">0</i>
- -->                      
+                     
                            <i id="carritoContenedor" class="fa-solid fa-cart-plus fa-bounce fa-lg" style="color: #ff6d02;" >0</i>
                       </a>
                     </li>
@@ -62,12 +61,12 @@
             </div>
         </nav>
     </header>
-    <main>
-  <div class="row mt-5" id="contenedor"></div>
+    <main class="estiloMainCarrito">
+  <div class="row justify-content-center pb-3" id="contenedor"></div>
   </main>
   
   
-  <div class="container-xl">
+  <div class="container-xl ">
   <div class="modal" tabindex="-1" role="dialog" id="modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -87,7 +86,7 @@
           <button type="button" class="btn btn-danger" id="vaciarCarrito">
             Vaciar carrito
           </button>
-          <button type="button" id="procesarCompra" class="btn btn-primary">
+          <button type="button" id="procesarCompra" class="btn fs-4" style="color: #FF8303;" >
             Continuar compra
           </button>
           <button
@@ -105,8 +104,9 @@
     </div>
   </div>
   </div>
+   
   
-    
+  
     <footer class="detFooter fs-5 text-center">
         <div class="container-fluid">
             <div class="row justify-content-center">

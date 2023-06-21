@@ -19,8 +19,8 @@ tbodyMovie.innerHTML = movieLocalStorage.map ((movie)=>
       Editar
     </button>
    
-    <button id= "buttonDeletedMovie" class= "btn btn-danger" onclick= 'deleteMovie(${movie.id})'> Eliminar </button>
-    <button id= "" class= "btn btn-warning" onclick= 'deleteMovie(${movie.id})'> Destacar </button>
+    <button id= "buttonDeletedMovie" class= "btn " onclick= 'deleteMovie(${movie.id})'><i class="fa-solid fa-trash fa-shake fa-xl" style="color: #ff0000;"></i></button>
+    <button id= "" class= "btn fs-4" style="color: #FF8303;" onclick= 'deleteMovie(${movie.id})'> Destacar </button>
    
     <div class="modal fade" id="exampleModal${movie.id}" tabindex="-1" aria-labelledby="exampleModalLabel${movie.id}" aria-hidden="true">
       <div class="modal-dialog">
