@@ -95,3 +95,10 @@ const deleteMovie = (id) => {
   location.reload()
  
 }
+
+/* const logout = () => {
+  usersLocalStorage[userIndex].login = false
+  localStorage.setItem('users', JSON.stringify(usersLocalStorage))
+  location.href = '../index.html'
+}
+ */
