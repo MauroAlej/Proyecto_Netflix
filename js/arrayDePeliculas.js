@@ -183,4 +183,17 @@ inputSearch.addEventListener('input', filtroPel)
 
 
   
- 
+//  let UsuarioAdmin = [
+//   {
+//     id: idUser,
+//     username: 'admin00',
+//     usermail: 'admin@gmail.com',
+//     pass: 'admin123',
+//     repeatPass: 'admin123',
+//     role:'admin',
+//     login:false,
+//     deleted: false
+//  }
+//  ]  
+
+//  localStorage.setItem('users',JSON.stringify(UsuarioAdmin))
