@@ -48,7 +48,6 @@ const login = () => {
 
     const { username, pass } = objetoForm
 
-
     if (!username && !pass) {
         alert('Debe completar los campos usuario y contraseña')
     } else if (!username) {
