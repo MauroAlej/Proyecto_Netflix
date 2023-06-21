@@ -72,12 +72,13 @@ const login = () => {
             if (usuario[0].role === 'admin') {
                 localStorageArray[usuarioIndex].login = true
                 localStorage.setItem('users', JSON.stringify(localStorageArray))
-                location.href = 'admin.html'
-            } else {
+                location.href = `admin.html?id=${usuario[0].id}`
+            } else{
                 localStorageArray[usuarioIndex].login = true
                 localStorage.setItem('users', JSON.stringify(localStorageArray))
-
-                location.href = 'vistaUsuarioLogueado.html'
+                console.log(usuario[0].id)
+                
+                    location.href = `vistaUsuarioLogueado.html?id=${usuario[0].id}`
             }
         }
     }
